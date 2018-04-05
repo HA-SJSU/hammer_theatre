@@ -5,13 +5,14 @@ notifications:
 
 env:
   global:
-  - USER="username"
-  - EMAIL="username@mail.com"
+  - USER="travis-deploy"
+  - EMAIL="yukikuro1993@gmail.com"
   - REPO="hammer_theatre"
-  - GH_REPO="github.com/HA-SJSU/${REPO}.git"
 
 script:
-  - ls -a
+  - ls -al
   - ssh -o StrictHostKeyChecking=no git@git.wpengine.com info
-  - git remote add staging git@git.wpengine.com:staging/hammertheatre.git
-  - git push staging master
+  - git config user.email ${EMAIL}
+  - git config user.name ${USER}
+    # - git remote add staging git@git.wpengine.com:staging/hammertheatre.git
+    # - git push staging master
