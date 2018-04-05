@@ -13,5 +13,6 @@ env:
 script:
   - git clone git://${GH_REPO}
   - ls -a
+  - ls ~/.ssh -a
 
 
