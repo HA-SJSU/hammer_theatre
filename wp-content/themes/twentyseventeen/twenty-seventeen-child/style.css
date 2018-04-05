@@ -1,0 +1,684 @@
+/*
+Theme Name: Twenty-Seventeen-Child
+Theme URI: https://wordpress.org/themes/twentyseventeen/
+Author: David Vu, Jameson Thai, Yuki Kuroshima
+Template: twentyseventeen
+Description: Main stlye sheet for HammerTheatre.com
+Version: 1.0
+*/
+
+@import url("../twentyseventeen/style.css");
+:root {
+  --white: #FFFFFF;
+  --hammer-blue: #264488;
+  --eventButtonsColor: #4199ca;
+  --form-bg: #F2F2F4;
+  --form-white: white;
+  --form-placeholder-text: #BEBEC8;
+
+  --alsoAtHammer:#BA529B;
+  --artTech: #A6CD37;
+  --sjsuAtHammer: #3162AE;
+  --hammerSpeaks: #EA1C28;
+  --holidaysAtHammer: #6D6AAD;
+  --musicWithoutBorders: #42bca4;
+}
+
+#home-event-img-1, #home-event-img-2, #home-event-img-3, #home-event-img-4 {
+  width: 700px;
+  display: inline-block;
+}
+
+#home-event-subcontainer-1, #home-event-subcontainer-2, #home-event-subcontainer-3, #home-event-subcontainer-4 {
+  width: 400px;
+  display: inline-block;
+}
+
+#home-event-title-1, #home-event-title-2, #home-event-title-3, #home-event-title-4 {
+  padding: 0;
+}
+
+/* Utility */
+
+button.series-button {
+  height: 55px;
+  width: 325px;
+  color: var(--white);
+}
+
+.color-white {
+  color: var(--white);
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.va-text-top {
+  vertical-align: text-top;
+}
+
+.va-text-bottom {
+  vertical-align: text-bottom;
+}
+
+.btn-width-310 button{
+  width: 310px;
+}
+
+.btn-width-425 button {
+  width: 425px;
+}
+
+.background-hammerBlue {
+  background-color: var(--hammer-blue);
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.white-text {
+  color: #FFFFFF;
+}
+
+.wrap {
+  max-width: 1200px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+/* ---------------------------------------
+			Home Page
+--------------------------------------- */
+
+
+/* Site Branding (top-most section of page) */
+
+.site-branding {
+  padding: 1rem;
+  background-color: var(--hammer-blue);
+}
+
+div.site-title a,
+div.site-title p {
+  font-size: 1rem;
+  color: #FFFFFF;
+}
+
+
+/* For header */
+
+.custom-header div.site-branding,
+.custom-header div.site-branding div#site-branding-wrap,
+div#site-branding-wrap div.site-title div.float-right {
+  padding: 0 !important;
+  height: 50px;
+}
+
+div.site-title p.float-left,
+div.site-title div.float-right p.color-white {
+  margin: 0;
+  padding: 15px 0;
+}
+
+
+/* Vertical align images */
+
+div.site-title div.float-right img,
+div.site-title div.float-right a,
+div.site-title div.float-right p.color-white,
+div.site-title p.float-left {
+  vertical-align: middle;
+}
+
+
+/* Navigation Bar */
+
+#custom-logo {
+  display: inline-block;
+}
+
+.menu-top-menu-container {
+  display: inline-block;
+}
+
+#top-menu li a {
+  color: var(--hammer-blue);
+}
+
+
+/* Image Carousel */
+
+ol.vc_carousel-indicators {
+  display: none;
+}
+
+.vc_images_carousel .vc_carousel-control.vc_right,
+.vc_images_carousel .vc_carousel-control.vc_left {
+  background-color: var(--hammer-blue);
+  color: var(--white);
+  text-decoration: none !important;
+  /* Not working */
+  opacity: 1;
+}
+
+.post-categories {
+  list-style-type: none;
+}
+
+#featured-title-1 {
+  font-weight: 200;
+}
+
+/* Margin between for first row */
+div#home-event-1 {
+  margin-top: 80px;
+}
+
+/* Margin between rows */
+div#home-event-1,
+div#home-event-2,
+div#home-event-3,
+div#home-event-4 {
+  margin-bottom: 80px;
+}
+
+/* Vertical top for images */
+div#home-event-img-1,
+div#home-event-img-2,
+div#home-event-img-3,
+div#home-event-img-4 {
+  vertical-align: top;
+}
+
+/* For each events seriese */
+p#home-event-series-1,
+p#home-event-series-2,
+p#home-event-series-3,
+p#home-event-series-4 {
+  font-size: 20pt;
+  margin-bottom: 50px;
+}
+
+
+/* For each event date */
+p#home-event-date-1,
+p#home-event-date-2,
+p#home-event-date-3,
+p#home-event-date-4 {
+  margin-bottom: 50px;
+}
+
+
+/* Footer */
+
+footer *,
+h2.widget-title {
+  color: var(--white);
+}
+
+footer div.wrap {
+  margin: 0em;
+}
+
+aside.widget-area {
+  background-color: var(--hammer-blue);
+}
+
+
+/* ---------------------------------------
+ 	               For footer
+ --------------------------------------- */
+
+.site-footer .widget-area {
+  /* To have space both right and left of content in the footer */
+  padding: 4em 5em 2em 5em;
+}
+
+.site-footer .widget-column.footer-widget-1 {
+  float: left;
+  width: 40%;
+  /*
+	 * To have space on the right side of images
+	 * I put 15 em to the right
+	 */
+  padding: 0 13em 0 5px;
+}
+
+
+/*
+ * For first image (HAMMER logo)
+ */
+
+.site-footer .widget-column.footer-widget-1 section#media_image-2 {
+  padding-bottom: 2em;
+}
+
+
+/*
+ * For second image (SJSU logo)
+ */
+
+.site-footer .widget-column.footer-widget-1 section#media_image-3 {
+  padding-right: 7em;
+  padding-bottom: 0px;
+}
+
+
+/*
+ * In footer 2nd element from the left, Address and phone number
+ */
+
+.site-footer .widget-column.footer-widget-2 {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+
+/*
+ * In footer 3rd element from the left, LINKS
+ */
+
+.site-footer .widget-column.footer-widget-3 {
+  float: left;
+  width: 20%;
+  /* Padding to the right so the texts are pushed to the left
+	 * I did this because the texts on the left of this element (which is Address and phone #)
+	 * is longer than this element
+	 * Therefore, if I destribute spaces equally, it does not look like aligned
+	 * By Yuki
+	 */
+  padding: 0 5px 0 5em;
+}
+
+
+/*
+ * In footer 3nd element from the left, Address and phone number of "TITLE"
+ */
+
+.site-footer .widget-column. h2.widget-title {
+  font-family: Montserrat Regular;
+}
+
+
+/*
+* In footer 4rd element from the left, Subscribe and email form
+*/
+
+.site-footer .widget-column.footer-widget-4 {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+
+/*
+ * In footer 4rd element from the left, Subscribe and email form
+ * Removing the padding bottom
+ */
+
+.site-footer .widget-column.footer-widget-4 section#custom_html-2,
+.site-footer .widget-column.footer-widget-4 section#text-13 {
+  padding-bottom: 0px;
+}
+
+div.textwidget p,
+div.textwidget p a,
+h2.widget-title {
+  color: var(--white);
+}
+
+div.site-info p {
+  color: var(--hammer-blue);
+}
+
+.nav-image {
+  float: left;
+  margin-right: 20px;
+}
+
+
+/** Overwritten to extend entry-content width to 100% **/
+
+body.page-two-column:not(.archive) #primary .entry-content {
+  /* float: right; */
+  width: 100%;
+}
+
+#look-back-banner {
+  background-color: grey;
+}
+
+#site-branding-wrap,
+.site-footer .wrap {
+  max-width: 2500px;
+}
+
+.menu-item-60 a span,
+.menu-item-60 a svg.icon.icon-angle-down {
+  display: none;
+}
+
+#site-branding-wrap {
+  max-width: 2500px;
+}
+
+
+/* ---------------------------------------
+	Banners (Upcoming Events, Keep In Touch, etc.)
+--------------------------------------- */
+
+#custom-button button, #custom-input-button {
+  background-color: var(--eventButtonsColor);
+  color: var(--white);
+  border: 0;
+  height: 55px;
+}
+
+
+#white-text-button-banner button {
+  background-color: var(--eventButtonsColor);
+  color: var(--white);
+}
+
+#white-text-button-banner {
+  padding-top: 30px;
+}
+
+
+
+#upcoming-events-banner, #keep-in-touch-banner {
+  font-family: Montserrat Regular;
+  background-color: var(--hammer-blue);
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#upcoming-events-banner-noButton {
+  background-color: var(--hammer-blue);
+  height: 180px;
+  padding: 1em;
+}
+
+.white-text-banner {
+  padding-top: 5%;
+  padding-left: 10%;
+  color: #FFFFFF;
+  font-size: 40px;
+  /* If we use pt it becomes too large */
+  font-family: Montserrat Regular;
+}
+#upcoming-events-banner div, #keep-in-touch-banner div {
+  margin-bottom: 0;
+}
+
+
+/*This is the buttons present in this banner*/
+
+.vc_btn3.vc_btn3-color-grey.vc_btn3-style-modern {
+  background-color: #5597c8;
+  border-color: #5597c8;
+  height: 55px;
+  font-family: Montserrat Regular;
+  color: white;
+}
+
+
+/*Look back banner type*/
+
+#lookback-banner {
+  background-color: #5597c8;
+  height: 180px;
+}
+
+
+/*Try to combine these if there are no other edits into a class or just an id - J*/
+
+#lookback-banner-title {
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 25px;
+  font-family: Montserrat Regular;
+  height: 15px;
+}
+
+#lookback-banner-content {
+  padding-left: 20%;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-family: Montserrat Regular;
+  align-content: center;
+}
+
+#lookback-image-row {
+  padding-top: 6%;
+  padding-right: 5%;
+}
+
+#lookback-imgsizes {
+  /*4x3 => padding-bottom value = 75%*/
+  padding-bottom: 75%;
+}
+
+
+/* ---------------------------------------
+	Contact Page
+--------------------------------------- */
+
+
+/*
+CSS for text/email/text area in contact form
+**This CSS is activated when not selected or not hovered***
+*/
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 select,
+.wpcf7 textarea,
+.wpcf7 input[type="text"]::placeholder,
+.wpcf7 input[type="email"]::placeholder,
+.wpcf7 input[type="tel"]::placeholder,
+.wpcf7 textarea::placeholder {
+  background-color: var(--form-bg);
+  color: var(--form-placeholder-text);
+  border-width: 1px;
+  border-color: var(--form-bg);
+  resize: none;
+  border-radius: 0px;
+  width: 100%;
+}
+
+
+/*
+CSS for text/email/text area in contact form
+***This CSS is activated only when selected(focus) or hovered***
+For more detail read here:
+https://stackoverflow.com/questions/1677990/what-is-the-difference-between-focus-and-active
+*/
+
+.wpcf7 input[type="text"]:focus,
+.wpcf7 input[type="email"]:focus,
+.wpcf7 input[type="tel"]:focus,
+.wpcf7 select:focus,
+.wpcf7 textarea:focus,
+.wpcf7 input[type="text"]:focus::placeholder,
+.wpcf7 input[type="email"]:focus::placeholder,
+.wpcf7 input[type="tel"]:focus::placeholder,
+.wpcf7 textarea:focus::placeholder {
+  color: var(--hammer-blue);
+  border-width: 1px;
+  border-color: var(--hammer-blue);
+}
+
+
+/*
+CSS for submit button in contact form
+*/
+
+.wpcf7 input[type="submit"] {
+  padding: 20px 80px 20px 80px;
+  background-color: var(--hammer-blue);
+  color: var(--white);
+}
+
+
+/*
+
+CSS for the right side of contact form
+
+*/
+
+.contact-info {
+  background-color: var(--hammer-blue);
+  color: var(--white);
+  padding: 50px 0px 0px 20px;
+  height: 401px;
+}
+
+.contact-info ul {
+  list-style-position: inside;
+}
+
+
+/* ---------------------------------------
+	Event Page
+--------------------------------------- */
+
+
+.events-list.tribe-bar-is-disabled #tribe-events-content-wrapper {
+  max-width: none;
+  width: 100%;
+}
+
+#tribe-events-content-wrapper {
+  margin: 0;
+}
+
+.tribe-events-list-separator-month:after {
+  border-bottom: none;
+}
+
+.tribe-events-list-separator-month {
+  text-align: left;
+}
+
+.tribe-events-list-separator-month span {
+  padding: 0;
+}
+
+/* Event Content (Article and ticket info) */
+
+div.event-content-two-col {
+  /* This is used to align the two elements horizontaly */
+  white-space: nowrap;
+}
+div.event-content-two-col div.left-col {
+  display: inline-block;
+  width: 65%;
+  white-space: normal;
+  vertical-align: text-top;
+  padding-right: 10em;
+}
+div.event-content-two-col div.right-col {
+  display: inline-block;
+  width: 35%;
+  white-space: normal;
+  vertical-align: text-top;
+  color: var(--white);
+}
+h3.tribe-events-single-section-title {
+  color: var(--white);
+}
+div.tribe-events-meta-group.tribe-events-meta-group-details {
+  width: 100%;
+  padding: 3em 1.5em;
+}
+
+div.tribe-events-single-section.tribe-events-event-meta.primary.tribe-clearfix {
+  /* Removing  the css for the parent of right col
+   * This div is generated by the events calender plug in
+   * and I did not want to modify it because this div is embedded in the php file 
+   * that is generating the child div
+   */
+  border: 0px;
+  margin: 0;
+  background-color: inherit;
+}
+
+
+/* Event thumbnail */
+
+.tribe-events-list .tribe-events-loop .tribe-events-event-image {
+  height: 200px;
+  width: 200px;
+}
+
+.tribe-events-list .tribe-events-event-image,
+.tribe-events-list .tribe-events-loop .tribe-events-event-image {
+  display: inline-block;
+  float: none;
+}
+
+#event-subcontainer2 {
+  width: 675px;
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+
+#event-subcontainer3 {
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+
+/* Location Table */
+.divTable{
+  display: table;
+  width: 100%;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTableHeading {
+  background-color: #EEE;
+  display: table-header-group;
+}
+.divTableCell, .divTableHead {
+  display: table-cell;
+  padding: 3px 10px;
+}
+.divTableHeading {
+  background-color: #EEE;
+  display: table-header-group;
+  font-weight: bold;
+}
+.divTableFoot {
+  background-color: #EEE;
+  display: table-footer-group;
+  font-weight: bold;
+}
+.divTableBody {
+  display: table-row-group;
+}
+
+/* ---------------------------------------
+  Series Page
+--------------------------------------- */
+
+.ecs-event-list {
+  list-style: none;
+}
+

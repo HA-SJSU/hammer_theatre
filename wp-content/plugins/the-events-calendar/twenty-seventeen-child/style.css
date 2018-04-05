@@ -1,0 +1,200 @@
+/*
+Theme Name: Twenty-Seventeen-Child
+Version: 1.0
+Description: Main stlye sheet for HammerTheatre.com
+Author: David Vu & Jameson Thai
+Parent Template: twentyseventeen
+*/
+
+@import url("../twentyseventeen/style.css");
+
+:root {
+	--hammer-blue: #264488;
+}
+
+ol.vc_carousel-indicators {
+	display: none;
+}
+footer div.wrap {
+	margin: 0em;
+}
+div.textwidget p, h2.widget-title{
+	color: #FFFFFF;
+}
+
+ div.site-info p {
+ 	color: var(--hammer-blue);
+ }
+
+
+#top-menu li a{
+	color: var(--hammer-blue);
+}
+
+aside.widget-area {
+	background-color: var(--hammer-blue);
+}
+
+.menu-top-menu-container {
+	display: inline-block;
+}
+
+#custom-logo {
+	display: inline-block;
+}
+
+.color-white {
+	color: #FFFFFF;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+div.site-title a, div.site-title p{
+	font-size: 1rem;
+	color: #FFFFFF;
+}
+
+
+.site-branding {
+	padding: 1rem;
+	background-color: var(--hammer-blue);
+}
+
+.site-footer .widget-column.footer-widget-1 {
+	float: left;
+	width: 25%;
+	padding: 0 5px;
+}
+
+.site-footer .widget-column.footer-widget-2 {
+	float: left;
+	width: 25%;
+	padding: 0 5px;
+}
+    
+.site-footer .widget-column.footer-widget-3 {
+	float: left;
+	width: 25%;
+	padding: 0 5px;
+}
+
+.site-footer .widget-column.footer-widget-4 {
+	float: left;
+	width: 25%;
+	padding: 0 5px;
+}
+
+.nav-image {
+float: left;
+margin-right: 20px;
+}
+
+/** Overwritten to extend entry-content width to 100% **/
+body.page-two-column:not(.archive) #primary .entry-content{
+		/* float: right; */
+		width: 100%;
+}
+
+.white-text {
+	color: #FFFFFF;
+}
+
+#keep-in-touch-banner, #upcoming-events-banner {
+	background-color: var(--hammer-blue);
+}
+
+#look-back-banner {
+	background-color: grey;
+	
+}
+
+#site-branding-wrap, .site-footer .wrap {
+	max-width: 2500px;
+}
+
+.menu-item-60 a span, .menu-item-60 a svg.icon.icon-angle-down{
+	display: none;
+}
+
+#site-branding-wrap {
+	max-width: 2500px;
+}
+
+
+/* ---------------------------------------
+	Banners (Upcoming Events, Keep In Touch, etc.)
+--------------------------------------- */
+
+
+#keep-in-touch-banner, #upcoming-events-banner {
+	background-color: var(--hammer-blue);
+	height: 120px;
+	margin-top: 80px;
+}
+
+
+.white-text-banner {
+	padding-top: 5%;
+	padding-left: 10%;
+	color: #FFFFFF;
+	font-size: 40px;  	/* If we use pt it becomes too large */
+	font-family: Montserrat Regular;
+}
+
+.white-text-button-banner {
+	padding-top: 30px;	
+
+}
+/*This is the buttons present in this banner*/
+.vc_btn3.vc_btn3-color-grey.vc_btn3-style-modern{
+	background-color: #5597c8;
+	border-color: #5597c8;
+	height: 55px;
+	font-family: Montserrat Regular;
+	color: white;
+}
+/*Look back banner type*/
+#lookback-banner{
+	background-color: #5597c8;
+	height: 180px;
+}
+
+/*Try to combine these if there are no other edits into a class or just an id - J*/
+#lookback-banner-title{
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 25px;
+	font-family: Montserrat Regular;
+	height: 15px;
+}
+
+#lookback-banner-content{
+	padding-left: 20%;	
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: Montserrat Regular;
+	align-content: center;
+}
+#lookback-image-row{
+	padding-top: 6%;
+	padding-right: 5%;
+}
+
+#lookback-imgsizes{
+	/*4x3 => padding-bottom value = 75%*/
+	padding-bottom: 75%;
+}
+
+
+
+

@@ -1,0 +1,421 @@
+/*
+Theme Name: Twenty-Seventeen-Child
+Theme URI: https://wordpress.org/themes/twentyseventeen/
+Author: David Vu, Jameson Thai, Yuki Kuroshima
+Template: twentyseventeen
+Description: Main stlye sheet for HammerTheatre.com
+Version: 1.0
+*/
+
+@import url("../twentyseventeen/style.css");
+
+:root {
+	--white: #FFFFFF;
+	--hammer-blue: #264488;
+    --eventButtonsColor: #4199ca;
+
+    --form-bg: #F2F2F4;
+    --form-white: white;
+    --form-placeholder-text: #BEBEC8;
+}
+
+/* Utility */
+.color-white {
+	color: #FFFFFF;
+}
+
+.background-hammerBlue {
+	background-color: var(--hammer-blue);
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.white-text {
+	color: #FFFFFF;
+}
+
+/* ---------------------------------------
+			Home Page
+--------------------------------------- */
+
+/* Site Branding (top-most section of page) */
+
+.site-branding {
+	padding: 1rem;
+	background-color: var(--hammer-blue);
+}
+
+div.site-title a, div.site-title p{
+	font-size: 1rem;
+	color: #FFFFFF;
+}
+
+/* ---------------------------------------
+								For header
+--------------------------------------- */
+.custom-header div.site-branding,
+.custom-header div.site-branding div#site-branding-wrap,
+div#site-branding-wrap div.site-title div.float-right {
+	padding: 0 !important;
+	height: 50px;
+}
+
+div.site-title p.float-left,
+div.site-title div.float-right p.color-white {
+	margin: 0;
+	padding: 15px 0;
+	/*vertical-align: middle;*/
+}
+/* Virtival align images */
+div.site-title div.float-right img {
+  vertical-align: middle;
+}
+/* ---------------------------------------
+								End header
+--------------------------------------- */
+
+/* Navigation Bar */
+
+#custom-logo {
+	display: inline-block;
+}
+
+.menu-top-menu-container {
+	display: inline-block;
+}
+
+#top-menu li a{
+	color: var(--hammer-blue);
+}
+
+/* Image Carousel */
+ol.vc_carousel-indicators {
+	display: none;
+}
+
+.vc_images_carousel .vc_carousel-control.vc_right, .vc_images_carousel .vc_carousel-control.vc_left{
+	background-color: var(--hammer-blue);
+	color: var(--white);
+	text-decoration: none !important; /* Not working */
+	opacity: 1;
+}
+
+/* Footer */
+
+footer *, h2.widget-title {
+	color: var(--white);
+}
+
+footer div.wrap {
+	margin: 0em;
+}
+
+aside.widget-area {
+	background-color: var(--hammer-blue);
+}
+
+ /* ---------------------------------------
+ 	               For footer
+ --------------------------------------- */
+
+.site-footer .widget-area {
+	/* To have space both right and left of content in the footer */
+	padding: 4em 5em 2em 5em;
+}
+
+.site-footer .widget-column.footer-widget-1 {
+	float: left;
+	width: 40%;
+	/*
+	 * To have space on the right side of images
+	 * I put 15 em to the right
+	 */
+	padding: 0 13em 0 5px;
+}
+
+/*
+ * For first image (HAMMER logo)
+ */
+.site-footer .widget-column.footer-widget-1 section#media_image-2 {
+	padding-bottom: 2em;
+}
+
+/*
+ * For second image (SJSU logo)
+ */
+.site-footer .widget-column.footer-widget-1 section#media_image-3 {
+	padding-right: 7em;
+	padding-bottom: 0px;
+}
+/*
+ * In footer 2nd element from the left, Address and phone number
+ */
+.site-footer .widget-column.footer-widget-2 {
+	float: left;
+	width: 20%;
+	padding: 0 5px;
+}
+.site-footer .widget-column.footer-widget-2 {
+}
+
+/*
+ * In footer 3rd element from the left, LINKS
+ */
+.site-footer .widget-column.footer-widget-3 {
+	float: left;
+	width: 20%;
+	/* Padding to the right so the texts are pushed to the left
+	 * I did this because the texts on the left of this element (which is Address and phone #)
+	 * is longer than this element
+	 * Therefore, if I destribute spaces equally, it does not look like aligned
+	 * By Yuki
+	 */
+	padding: 0 5px 0 5em;
+}
+/*
+ * In footer 3nd element from the left, Address and phone number of "TITLE"
+ */
+.site-footer .widget-column. h2.widget-title {
+	font-family: Montserrat Regular;
+}
+
+/*
+ * In footer 4rd element from the left, Subscribe and email form
+ */
+.site-footer .widget-column.footer-widget-4 {
+	float: left;
+	width: 20%;
+	padding: 0 5px;
+}
+/*
+ * In footer 4rd element from the left, Subscribe and email form
+ * Removing the padding bottom
+ */
+ .site-footer .widget-column.footer-widget-4 section#custom_html-2,
+ .site-footer .widget-column.footer-widget-4 section#text-13{
+	 padding-bottom: 0px;
+ }
+ /* ---------------------------------------
+ 	            END For footer
+ --------------------------------------- */
+
+div.textwidget p, div.textwidget p a, h2.widget-title{
+	color: var(--white);
+}
+
+div.site-info p {
+ 	color: var(--hammer-blue);
+}
+
+
+
+
+
+
+
+
+
+.nav-image {
+float: left;
+margin-right: 20px;
+}
+
+/** Overwritten to extend entry-content width to 100% **/
+body.page-two-column:not(.archive) #primary .entry-content{
+		/* float: right; */
+		width: 100%;
+}
+
+
+#look-back-banner {
+	background-color: grey;
+
+}
+
+#site-branding-wrap, .site-footer .wrap {
+	max-width: 2500px;
+}
+
+.menu-item-60 a span, .menu-item-60 a svg.icon.icon-angle-down{
+	display: none;
+}
+
+#site-branding-wrap {
+	max-width: 2500px;
+}
+
+
+/* ---------------------------------------
+	Banners (Upcoming Events, Keep In Touch, etc.)
+--------------------------------------- */
+
+
+
+#white-text-button-banner button{
+	background-color: var(--eventButtonsColor);
+	color: var(--white);
+}
+
+#white-text-button-banner {
+	padding-top: 30px;
+
+}
+
+#keep-in-touch-banner, #upcoming-events-banner {
+	background-color: var(--hammer-blue);
+	height: 120px;
+	margin-top: 80px;
+}
+
+#upcoming-events-banner-noButton {
+	background-color: var(--hammer-blue);
+	height: 120px;
+}
+
+
+.white-text-banner {
+	padding-top: 5%;
+	padding-left: 10%;
+	color: #FFFFFF;
+	font-size: 40px;  	/* If we use pt it becomes too large */
+	font-family: Montserrat Regular;
+}
+
+
+/*This is the buttons present in this banner*/
+.vc_btn3.vc_btn3-color-grey.vc_btn3-style-modern{
+	background-color: #5597c8;
+	border-color: #5597c8;
+	height: 55px;
+	font-family: Montserrat Regular;
+	color: white;
+}
+/*Look back banner type*/
+#lookback-banner{
+	background-color: #5597c8;
+	height: 180px;
+}
+
+/*Try to combine these if there are no other edits into a class or just an id - J*/
+#lookback-banner-title{
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 25px;
+	font-family: Montserrat Regular;
+	height: 15px;
+}
+
+#lookback-banner-content{
+	padding-left: 20%;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: Montserrat Regular;
+	align-content: center;
+}
+#lookback-image-row{
+	padding-top: 6%;
+	padding-right: 5%;
+}
+
+#lookback-imgsizes{
+	/*4x3 => padding-bottom value = 75%*/
+	padding-bottom: 75%;
+}
+
+
+/* ---------------------------------------
+	Contact Page
+--------------------------------------- */
+
+/*
+CSS for text/email/text area in contact form
+**This CSS is activated when not selected or not hovered***
+*/
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea,
+.wpcf7 input[type="text"]::placeholder,
+.wpcf7 input[type="email"]::placeholder,
+.wpcf7 textarea::placeholder {
+  background-color: var(--form-bg);
+  color: var(--form-placeholder-text);
+  border-width: 1px;
+  border-color: var(--form-bg);
+  resize: none;
+}
+
+
+/*
+CSS for text/email/text area in contact form
+***This CSS is activated only when selected(focus) or hovered***
+For more detail read here:
+https://stackoverflow.com/questions/1677990/what-is-the-difference-between-focus-and-active
+*/
+
+.wpcf7 input[type="text"]:focus,
+.wpcf7 input[type="email"]:focus,
+.wpcf7 textarea:focus,
+.wpcf7 input[type="text"]:focus::placeholder,
+.wpcf7 input[type="email"]:focus::placeholder,
+.wpcf7 textarea:focus::placeholder {
+  color: var(--hammer-blue);
+  border-width: 1px;
+  border-color: var(--hammer-blue);
+}
+
+
+/*
+CSS for submit button in contact form
+*/
+
+.wpcf7 input[type="submit"] {
+  padding: 20px 80px 20px 80px;
+  background-color: var(--hammer-blue);
+  color: var(--white);
+}
+
+
+/*
+
+CSS for the right side of contact form
+
+*/
+
+.contact-info {
+  background-color: var(--hammer-blue);
+  color: var(--white);
+  padding: 50px 0px 0px 20px;
+  height: 401px;
+}
+
+.contact-info ul {
+  list-style-position: inside;
+}
+
+
+/* ---------------------------------------
+	Event Page
+--------------------------------------- */
+
+.tribe-events-list-separator-month:after {
+	border-bottom: none;
+}
+
+.tribe-events-list-separator-month {
+	text-align: left;
+}
+
+.tribe-events-list-separator-month span {
+	padding: 0;
+}
