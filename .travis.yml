@@ -11,7 +11,8 @@ env:
 
 script:
   - ls -al
-  - ssh -o StrictHostKeyChecking=no git@git.wpengine.com info
+    #- ssh -o StrictHostKeyChecking=no git@git.wpengine.com info
+  - ssh git@git.wpengine.com info
   - git config user.email ${EMAIL}
   - git config user.name ${USER}
     # - git remote add staging git@git.wpengine.com:staging/hammertheatre.git
