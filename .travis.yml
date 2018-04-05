@@ -9,6 +9,9 @@ env:
   - EMAIL="yukikuro1993@gmail.com"
   - REPO="hammer_theatre"
 
+addons:
+  ssh_known_hosts: git.wpengine.com
+
 script:
   - ls -al
     #- ssh -o StrictHostKeyChecking=no git@git.wpengine.com info
