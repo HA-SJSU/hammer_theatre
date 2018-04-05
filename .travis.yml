@@ -13,6 +13,4 @@ env:
 script:
   - ls -a
   - git remote add staging git@git.wpengine.com:staging/hammertheatre.git
-  - 
-
-
+  - git push staging master
