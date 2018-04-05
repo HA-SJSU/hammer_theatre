@@ -1,5 +1,8 @@
 language: php
 
+notifications:
+  email: false
+
 env:
   global:
   - USER="username"
@@ -7,7 +10,7 @@ env:
   - REPO="hammer_theatre"
   - GH_REPO="github.com/HA-SJSU/${REPO}.git"
 
-after_success:
+script:
   - git clone git://${GH_REPO}
   - ls -a
 
