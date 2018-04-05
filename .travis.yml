@@ -13,7 +13,6 @@ env:
 script:
   - git clone git://${GH_REPO}
   - ls -a
-  - ls ~/.ssh -a
-  - ls .travis -a
+  - ssh git@git.wpengine.com info
 
 
