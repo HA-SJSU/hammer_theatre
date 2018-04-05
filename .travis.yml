@@ -11,10 +11,8 @@ env:
   - GH_REPO="github.com/HA-SJSU/${REPO}.git"
 
 script:
-  - git clone git://${GH_REPO}
   - ls -a
-  - ssh git@git.wpengine.com info
-  - yes
-  - echo yes
+  - git remote add staging git@git.wpengine.com:staging/hammertheatre.git
+  - 
 
 
