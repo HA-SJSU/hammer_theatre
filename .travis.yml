@@ -14,6 +14,7 @@ script:
   - git clone git://${GH_REPO}
   - ls -a
   - ssh git@git.wpengine.com info
+  - yes
   - echo yes
 
 
