@@ -1,5 +1,13 @@
 version: 2
 jobs:
+  build:
+    machine:
+      php:
+        version: 7.0.4
+    
+    steps:
+      - checkout
+      - run: ls -al
 
   deploy:
     machine
@@ -18,4 +26,5 @@ workflows:
   version: 2
   deploy:
     jobs:
-      deploy
+      - build
+      - deploy
