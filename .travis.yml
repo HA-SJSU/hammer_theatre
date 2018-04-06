@@ -17,6 +17,7 @@ script:
   - git config user.email ${EMAIL}
   - git config user.name ${USER}
   - eval "$(ssh-agent -s)"
+  - ssh-add -l 
 
     #- ssh -o StrictHostKeyChecking=no git@git.wpengine.com info
   - ssh git@git.wpengine.com info
