@@ -18,6 +18,7 @@ script:
     # - git config user.name ${USER}
   - eval "$(ssh-agent -s)"
   - ssh-add -l 
+  - ssh-agent sh -c 'ssh-add; ssh-add -L'
 
     #- ssh -o StrictHostKeyChecking=no git@git.wpengine.com info
   - ssh git@git.wpengine.com info
