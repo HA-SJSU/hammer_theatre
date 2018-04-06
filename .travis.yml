@@ -14,9 +14,9 @@ addons:
 
 script:
   - ls -al
-  - git config user.email ${EMAIL}
-  - git config user.name ${USER}
-  - eval "$(ssh-agent -s)"
+    # - git config user.email ${EMAIL}
+    # - git config user.name ${USER}
+    # - eval "$(ssh-agent -s)"
   - ssh-add -l 
 
     #- ssh -o StrictHostKeyChecking=no git@git.wpengine.com info
