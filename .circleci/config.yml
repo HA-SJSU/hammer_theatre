@@ -14,13 +14,23 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Show all
+          name: Show all dir and files
           command: ls -al
 
       - run:
+          name: ssh info to staging server
+          command: ssh -v git@git.wpengine.com info 
+
+      - run:
+          name: Git config
           command: |
             git status
-            git status
+            git remote add staging git@git.wpengine.com:staging/hammertheatre.git
+
+      - run:
+          name: Deploy to staging
+          command: |
+            git push staging master
 
 workflows:
   version: 2
