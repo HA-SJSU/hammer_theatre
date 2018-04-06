@@ -1,5 +1,6 @@
 version: 2
 jobs:
+
   deploy:
     machine
         # working_directory: ~/circleci-demo-workflows
@@ -15,6 +16,6 @@ jobs:
 
 workflows:
   version: 2
-  build-and-deploy:
+  deploy:
     jobs:
-      - deploy
+      deploy
