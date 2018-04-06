@@ -1,9 +1,7 @@
 version: 2
 jobs:
   deploy:
-    machine
         # working_directory: ~/circleci-demo-workflows
-    environment:
     steps:
       - checkout
       - run:
