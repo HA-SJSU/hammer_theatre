@@ -29,7 +29,7 @@ jobs:
 
       - run:
           name: Deploy to staging
-          command: |
+          command:
             git push staging master
 
 workflows:
@@ -40,3 +40,7 @@ workflows:
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - master
