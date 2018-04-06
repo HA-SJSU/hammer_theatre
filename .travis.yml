@@ -5,6 +5,7 @@ env:
   global:
   - EMAIL="yukikuro1993@gmail.com"
   - REPO="hammer_theatre"
+  - secure: g8WkDCrL3azzUNxyT0vpoB0n1gikTJUSeE8rguMPRmfMtcdXqgpY8xG+Utt5dPt8PPvU6v//6ULfQS8tq1YTLAv4vqL9UyCIOnGhJB3yN+Xqz16XnlHZS+1gN6vBUJEKvT6w67+RX10dOxPeiPi+2x603yGPzQlv8osuvWwaGe9RYxpPxWui/Y7p0QruVitpfNIicq68uLL1R0rESaScXknPTtcU6j59ihRLAIl5GOM3gGKbFHDhOveDl8Tqcc0sRNrinaqa2dmjDdpqteNpGZ7xgdulgWteOCNZ6GOBZnUv3lQapET7WyXPhJcKZ5NyPvNNTCnwcotD+4V7pfiYtDRXcFab5Y2q7rFLXFKheTuPTlXK2vXkumi3mHSCr6eU8Ip2LEx93mI4xth1xSHxQkA5W2D/KQIf+O+8klraKIYWc0bx796ZWnZiLY1ZfTmTqEsgfupGxarvoHrS7GHYzhkfpcer78NEzgaDX6GaaRwoTiAdp/XmkVuFBhweq3woKNOaReUIDsdXCCIZtF8HZ5FJooZmojVf0+IWSkAx39e7qqeUyDD9q6l6qNvC2GliOLrdd0iIhpH/zbEh//Jg/Y8ygO8b1els5ILlDOKeos0brI4KqoY0TmGdhff4yL8wVDtYabY4WdyE6uF09dI/hluYmz1gn+kNLdfeyFGF9Eo=
 addons:
   ssh_known_hosts: git.wpengine.com
 script:
@@ -12,9 +13,10 @@ script:
 - eval "$(ssh-agent -s)"
 - ssh-add -l
 - ssh-agent sh -c 'ssh-add; ssh-add -L'
-- ssh git@git.wpengine.com info
+- ssh -v git@git.wpengine.com info
 before_install:
 - openssl aes-256-cbc -K $encrypted_71773fbed6de_key -iv $encrypted_71773fbed6de_iv
   -in test.txt.enc -out test.txt -d
 - ls -al
 - cat test.txt
+
