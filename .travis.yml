@@ -3,7 +3,6 @@ notifications:
   email: false
 env:
   global:
-  - USER="travis-deploy"
   - EMAIL="yukikuro1993@gmail.com"
   - REPO="hammer_theatre"
 addons:
