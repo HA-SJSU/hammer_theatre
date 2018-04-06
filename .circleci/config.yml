@@ -14,8 +14,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Setup Heroku
-          command: bash .circleci/setup-heroku.sh
+          name: Show all
+          command: ls -al
 
       - run:
           command: |
