@@ -1,26 +1,21 @@
 language: php
-
 notifications:
   email: false
-
 env:
   global:
   - USER="travis-deploy"
   - EMAIL="yukikuro1993@gmail.com"
   - REPO="hammer_theatre"
-
 addons:
   ssh_known_hosts: git.wpengine.com
-
 script:
-  - ls -al
-    # - git config user.email ${EMAIL}
-    # - git config user.name ${USER}
-  - eval "$(ssh-agent -s)"
-  - ssh-add -l 
-  - ssh-agent sh -c 'ssh-add; ssh-add -L'
-
-    #- ssh -o StrictHostKeyChecking=no git@git.wpengine.com info
-  - ssh git@git.wpengine.com info
-    # - git remote add staging git@git.wpengine.com:staging/hammertheatre.git
-    # - git push staging master
+- ls -al
+- eval "$(ssh-agent -s)"
+- ssh-add -l
+- ssh-agent sh -c 'ssh-add; ssh-add -L'
+- ssh git@git.wpengine.com info
+before_install:
+- openssl aes-256-cbc -K $encrypted_71773fbed6de_key -iv $encrypted_71773fbed6de_iv
+  -in test.txt.enc -out test.txt -d
+- ls -al
+- cat test.txt
