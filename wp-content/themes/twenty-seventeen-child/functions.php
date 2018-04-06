@@ -1,5 +1,6 @@
 <?php
 
+#test
 # Register extra footer area 3
 register_sidebar(array(
   'name' => __('Footer 3', 'twentyseventeen'),
