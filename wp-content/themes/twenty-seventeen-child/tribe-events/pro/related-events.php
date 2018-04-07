@@ -34,12 +34,13 @@ echo '<h3 class="tribe-events-related-events-title">More events from '.$category
 			<a href="<?php echo esc_url( tribe_get_event_link( $post ) ); ?>" class="url" rel="bookmark"><?php echo $thumb ?></a>
 		</div>
 		<div class="tribe-related-event-info">
-			<h3 class="tribe-related-events-title"><a href="<?php echo tribe_get_event_link( $post ); ?>" class="tribe-event-url" rel="bookmark"><?php echo get_the_title( $post->ID ); ?></a></h3>
+			<p class="tribe-related-events-title"><a href="<?php echo tribe_get_event_link( $post ); ?>" class="tribe-event-url" rel="bookmark"><?php echo get_the_title( $post->ID ); ?></a><br/>
 			<?php
 				if ( $post->post_type == Tribe__Events__Main::POSTTYPE ) {
 					echo tribe_events_event_schedule_details( $post );
 				}
 			?>
+			</p>
 		</div>
 	</li>
 	<?php endforeach; ?>

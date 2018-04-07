@@ -4,7 +4,7 @@ Theme URI: https://wordpress.org/themes/twentyseventeen/
 Author: David Vu & Yuki Kuroshima
 Template: twentyseventeen
 Description: Main stlye sheet for HammerTheatre.com
-Version: 1.2.0
+Version: 1.2.1
 
 */
 
@@ -724,6 +724,8 @@ Home - (4) Upcoming Events
     width: 20rem;
     height: 3rem;
     margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
 }
 .buy-ticket-button {
   font-size: 1.2rem !important;
@@ -984,6 +986,10 @@ a.series-button {
   text-transform: uppercase;
 }
 
+#tribe-events-content.tribe-events-list {
+  margin-bottom: 0 !important;
+}
+
 #tribe-events-footer { display: none; }
 
 .tribe-event-url
@@ -1117,6 +1123,39 @@ div.tribe-events-single-section.tribe-events-event-meta.primary.tribe-clearfix {
 .tribe-events-list .type-tribe_events,
 .tribe-events-list-separator-month {
   margin-bottom: 0;
+}
+
+/* Individual Event Page */
+.tribe-events-single ul.tribe-related-events .tribe-related-events-title .tribe-event-url {
+  font-size: 1.6rem !important;
+  font-weight: 500 !important;
+}
+
+.tribe-events-single ul.tribe-related-events .tribe-related-events-title .tribe-event-date-start {
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+}
+
+.single-tribe_events .tribe-events-single-event-title {
+  font-size: 3.4rem !important;
+  font-weight: 500 !important;
+}
+
+.tribe-events-single ul.tribe-related-events li .event-is-recurring {
+  display: none;
+}
+
+.tribe-events-single ul.tribe-related-events li {
+  width: 45%;
+}
+
+.tribe-events-single-section-title {
+  font-weight: 400 !important;
+}
+
+.single-tribe_events .tribe-events-event-meta {
+  font-size: 1.6rem !important;
+  font-weight: 300 !important;
 }
 
 /* ---------------------------------------

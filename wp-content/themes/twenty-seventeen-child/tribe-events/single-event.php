@@ -41,10 +41,10 @@ $category_color = tribe_get_color_for_categories($category_text);
 
         <!-- Category -->
         <div style="font-size: 15px;">
-                <h2 style="vertical-align: middle;">
+                <h3 style="vertical-align: middle;">
                         <?php echo $category_text ?> 
-                        <span style="color: var(<?php echo $category_color ?>); font-size: 1.4em; vertical-align: middle;">&#x2794;</span>
-                </h2>
+                        <span style="color: var(<?php echo $category_color ?>);vertical-align: middle;">&#x2794;</span>
+                </h3>
         </div>
 
         <!-- Notices -->

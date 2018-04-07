@@ -66,7 +66,7 @@ $category_color = tribe_get_color_for_categories($category_text);
 ?>
 
 <div class="tribe-events-meta-group tribe-events-meta-group-details" style="background-color: var(<?php echo $category_color ?>);">
-	<h3 class="tribe-events-single-section-title"> <?php esc_html_e( 'Upcoming Dates', 'the-events-calendar' ) ?> </h3>
+	<h2 class="tribe-events-single-section-title"> <?php esc_html_e( 'Upcoming Dates', 'the-events-calendar' ) ?> </h2>
 	<dl>
 
 		<?php
@@ -122,9 +122,9 @@ $category_color = tribe_get_color_for_categories($category_text);
                         Original -->
 
                         <div>
-                        <?php if ( tribe_is_recurring_event($event_id) ): ?>
+                        	<?php if ( tribe_is_recurring_event($event_id) ): ?>
                                 <?php show_recurring_dates( $event_id ) ?>
-                        <?php else : ?>
+                       		 <?php else : ?>
                                 <div class="event-detail">
                                         <?php esc_html_e( $start_date ) ?> @ <?php echo $time_formatted; ?>
                                 </div>

@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 } ?>
 
-<div id="tribe-events-content" class="tribe-events-list margin-bottom-60">
+<div id="tribe-events-content" class="tribe-events-list">
 	<?php
 	/**
 	 * Fires before any content is printed inside the list view.
