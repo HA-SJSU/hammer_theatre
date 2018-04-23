@@ -18,7 +18,7 @@
 					</div>
 					<!-- 'OPERATED BY SAN JOSE STATE UNIVERSITY' -->
 					<div id="sjsu-copy">
-						<h1 style="color: #e8af2a"><?php bloginfo( 'name' ); ?></h1>
+						<h1 style="color: #e8af2a">OPERATED BY SAN JOSÉ STATE UNIVERSITY</h1>
 					</div>
 					<div id="sitebranding-right">
 						<!-- Twitter Logo -->

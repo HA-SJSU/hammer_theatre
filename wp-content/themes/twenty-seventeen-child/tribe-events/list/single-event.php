@@ -78,11 +78,11 @@ if($is_current_page_events){
 </h2>
 <?php do_action( 'tribe_events_after_the_event_title' ) ?>
 
-<!-- subtitle -->
+<!-- Subtitle -->
 <h3 class="subtitle">
-<?php echo get_post_meta($event_id, 'subtitle', true); ?>
+<?php echo get_post_meta($event_id, 'Subtitle', true); ?>
 </h3>
-<!-- End of subtitle -->
+<!-- End of Subtitle -->
 
 <!-- Event Content -->
 <?php do_action( 'tribe_events_before_the_content' ); ?>
@@ -102,19 +102,9 @@ if($is_current_page_events){
 		<div class="tribe-event-schedule-details">
 			<!-- If/else to render single event time or multi-day event time -->
 			<?php
-                                if ( tribe_is_recurring_event($event_id) ) {
-                                        show_recurring_dates( $event_id );
-                                } else {
-                                        // Single day event
-                                        $custom_date = tribe_get_event_meta(null, 'custom_date', true);
-                                        if($custom_date){
-                                                echo $custom_date;
-                                        }
-                                        else {
-                                                echo tribe_events_event_schedule_details();
-                                        }
-                                }
+                                show_event_dates($event_id);
 			?>
+
 		</div>
 	</div>
 </div><!-- .tribe-events-event-meta -->

@@ -74,7 +74,7 @@ foreach ( $events as $post ) {
         echo '<h2 class="featured-event-title">'.$post->post_title.'</h2>';
         echo '<h4 class="subtitle">' . get_post_meta($post->ID, 'subtitle', true) . '</h4>';
         echo '<p id="home-event-excerpt-'.$counter.'">'.tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ).'</p>';
-        echo '<p id="home-event-date-'.$counter.'" class="margin-bottom-50">'.tribe_get_start_date($post).'</p>';
+        echo '<p id="home-event-date-'.$counter.'" class="margin-bottom-50">'.show_event_dates($post->ID, true).'</p>';
 
         echo '<a href="'.esc_url( tribe_get_event_link() ).'" class="home-event-button button width-50-percent buy-tickets-link white-text" rel="bookmark" style="width: 50%!important; background-color: var('.tribe_get_color_for_categories( tribe_get_text_categories() ).');">VIEW EVENT</a>';
 
