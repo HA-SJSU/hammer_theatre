@@ -469,55 +469,16 @@ add_shortcode( 'show_past_event', 'show_past_event_sc_wrapper' );
  * @return None. This function does not return anything. It only renders recurring event dates to the browser
  */
 function show_recurring_dates ( $event_id, $is_home=false ) {
-        $dates = tribe_get_recurrence_start_dates( $event_id );
-
-        if ($is_home) {
-                // echo first date
-                $first_date_text = strtotime($dates[0]);
-                echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $first_date_text).'</span><br>';
-
-                // loop from 1 to 3
-                for ($i = 1; $i < 3; $i++) {
-                        $date_text = strtotime($dates[$i]);
-                        // if length == 2
-                        if (count($dates) == 2 ) {
-                                // print 2nd date w/o comma
-                                echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>';
-                                break;
-                        } else {
-                                // if (counter < 2)
-                                if ($i < 2) {
-                                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span><br>';
-                                } else {
-                                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span><br>';
-                                        echo '<span>Click <a style="text-decoration: underline !important;" href='.tribe_get_event_link( $event_id ).' >here</a> to see more dates.</span>';
-                                }
-                        }
-                }
-        } else {
-                foreach ($dates as $date) {
-                $date_text = strtotime($date);
-                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span><br>';
-                }
-        }
-
-
-
-        /*
+        $dates =  tribe_get_recurrence_start_dates( $event_id );
+        $counter = 0;
         foreach ($dates as $date) {
                 $date_text = strtotime($date);
                 if ($is_home) {
                         if ($counter < 2) {
-                                if (count($dates) == 2) {
-                                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>';
-                                        echo 'In count == 2';
-                                } else {
-                                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>, ';
-                                        echo 'In count < 2';
-                                }
+                                echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>, ';
                         } else if ($counter == 2){
-                                echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>... <a href='.tribe_get_event_link( $event_id ).'>More dates</a>';
-                                echo '<p>'.tribe_get_event_link( $event_id ).'</p>';
+                                echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>... <a href='.tribe_get_event_meta( $event_id, ‘_EventURL’, true ).'>More dates</a>';
+                                echo tribe_get_event_meta( $event_id, ‘_EventURL’, true );
                         } else {
                                 break;
                         }
@@ -527,7 +488,6 @@ function show_recurring_dates ( $event_id, $is_home=false ) {
                         echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span><br>';
                 }
         }
-         */
 }
 
 
@@ -704,6 +664,6 @@ function my_theme_enqueue_styles() {
     wp_enqueue_style( 'child-style',
     get_stylesheet_directory_uri() . '/style.css',
     array($parent_style),
-    '1.2.3' );
+    '1.2.2' );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
