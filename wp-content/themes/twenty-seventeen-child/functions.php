@@ -61,315 +61,7 @@ if ( class_exists('Tribe__Events__Main') ){
         }
 }
 
-/*
- * This function gets the category name
- * and returns the color in hex
- */
-function tribe_get_color_for_categories ( $category_text ) {
-        $color = '';
-        switch ($category_text) {
-        case 'Also @ Hammer':
-        case 'Also @ Hammer Series':
-                $color = '--alsoAtHammer';
-                break;
-        case 'ArtTech':
-        case 'ArtTech Series':
-                $color = '--artTech';
-                break;
-        case 'SJSU @ Hammer':
-        case 'SJSU @ Hammer Series':
-                $color = '--sjsuAtHammer';
-                break;
-        case 'Hammer Speaks':
-        case 'Hammer Speaks Series':
-                $color = '--hammerSpeaks';
-                break;
-        case 'Holidays @ Hammer':
-        case 'Holidays @ Hammer Series':
-                $color = '--holidaysAtHammer';
-                break;
-        case 'Music Without Borders':
-        case 'Music Without Borders Series':
-                $color = '--musicWithoutBorders';
-                break;
-        case 'Lights &amp; Action':
-        case 'Lights &amp; Action Series':
-                $color = '--lightsAndAction';
-                break;
-        default:
-                $color = '--gray';
-                break;
-        }
-        return $color;
-}
 
-/*
- * This function returns the url for logo used in the home page
- * based on the category of the event.
- * @param category_text String: category name in text. For example, "Also @ Hammer".
- * @return url for the logo. For example, http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-SJSU@Hammer.png
- *         It returns empty string if the category does not match
- *
- * TODO Need to make sure this works on both dev and production (Maybe url can be an issue)
- */
-function get_logo_url ( $category_text ) {
-        $url = '';
-        switch ($category_text) {
-        case 'Also @ Hammer':
-        case 'Also @ Hammer Series':
-                $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Also.png';
-                break;
-        case 'ArtTech':
-        case 'ArtTech Series':
-                $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Art-and-Tech.png';
-                break;
-        case 'SJSU @ Hammer':
-        case 'SJSU @ Hammer Series':
-                $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-SJSU@Hammer.png';
-                break;
-        case 'Hammer Speaks':
-        case 'Hammer Speaks Series':
-                $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Hammer-Speaks.png';
-                break;
-        case 'Holidays @ Hammer':
-        case 'Holidays @ Hammer Series':
-                $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Holidays-@-Hammer.png';
-                break;
-        case 'Music Without Borders':
-        case 'Music Without Borders Series':
-                $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Music-Without-Borders.png';
-                break;
-        case 'Lights &amp; Action':
-        case 'Lights &amp; Action Series':
-                $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Lights-and-Action.png';
-                break;
-        default:
-                $url = '';
-                break;
-        }
-        return $url;
-}
-
-/*
- * This function returns the url for banner used in the home page
- * based on the category of the event.
- * @param category_text String: category name in text. For example, "Also @ Hammer".
- * @return url for the banner. For example,
- *         It returns empty string if the category does not match
- *
- * TODO Need to make sure this works on both dev and production (Maybe url can be an issue)
- */
-function get_banner_url ( $category_text ) {
-        $url = '';
-        switch ($category_text) {
-        case 'Also @ Hammer':
-        case 'Also @ Hammer Series':
-                $url = '/wp-content/uploads/2018/03/Also-At-Hammer-Logo.png';
-                break;
-        case 'ArtTech':
-        case 'ArtTech Series':
-                $url = '/wp-content/uploads/2018/03/ArtTech-Logo.png';
-                break;
-        case 'SJSU @ Hammer':
-        case 'SJSU @ Hammer Series':
-                $url = '/wp-content/uploads/2018/03/SJSU-At-Hammer-Logo.png';
-                break;
-        case 'Hammer Speaks':
-        case 'Hammer Speaks Series':
-                $url = '/wp-content/uploads/2018/03/Hammer-Speaks-Logo.png';
-                break;
-        case 'Holidays @ Hammer':
-        case 'Holidays @ Hammer Series':
-                $url = '/wp-content/uploads/2018/03/Holidays-At-Hammer-Logo.png';
-                break;
-        case 'Music Without Borders':
-        case 'Music Without Borders Series':
-                $url = '/wp-content/uploads/2018/03/Music-Without-Borders-Logo.png';
-                break;
-        case 'Lights &amp; Action':
-        case 'Lights &amp; Action Series':
-                $url = '/wp-content/uploads/2018/03/Lights-And-Action-Logo.png';
-                break;
-        default:
-                $url = '';
-                break;
-        }
-        return $url;
-}
-
-/*
- * This function returns styling for logo in home page.
- * Please take a look at spec for https://projects.invisionapp.com/share/RNELD1MGY#/screens/266256245
- * The location of logo is followings:
- * * Category of the event
- * * Location of image
- *
- * @param category_text String: category name in text. For example, "Also @ Hammer".
- * @param is_left Boolean: Location of image.
- *        If true, it means that image is displayed on left column.
- *        If false, it means that image is displayed on right column.
- * @return Styling for the logo. For example, "margin-top: 40px; margin-left: 304px;"
- *         It returns empty string if the category does not match
- *
- * TODO Need to make sure this works on both dev and production (Maybe url can be an issue)
- */
-function get_logo_css_margin ( $category_text, $is_left ) {
-        $style_text = '';
-        switch ($category_text) {
-        case 'Also @ Hammer':
-        case 'Also @ Hammer Series':
-                if ( $is_left ) {
-                        $style_text = 'margin-top: 3%; margin-left: 44.9%; max-width: 7%;';
-                } else {
-                        $style_text = 'margin-top: 3%; margin-left: -3.5%; max-width: 7%;';
-                }
-                break;
-        case 'ArtTech':
-        case 'ArtTech Series':
-                if ( $is_left ) {
-                        $style_text = 'margin-top: -3.5%; margin-left: 37%; max-width: 7%;';
-                } else {
-                        $style_text = 'margin-top: 4%; margin-left: -3.5%; max-width: 7%;';
-                }
-                break;
-        case 'SJSU @ Hammer':
-        case 'SJSU @ Hammer Series':
-                if ( $is_left ) {
-                        $style_text = 'margin-top: -3.8%; margin-left: 38%; max-width: 7%;';
-                } else {
-                        $style_text = 'margin-top: -3.8%; margin-left: 2.5%; max-width: 7%;';
-                }
-                break;
-        case 'Hammer Speaks':
-        case 'Hammer Speaks Series':
-                if ( $is_left ) {
-                        $style_text = 'margin-top: -3.8%; margin-left: 38%; max-width: 7%;';
-                } else {
-                        $style_text = 'margin-top: -3.8%; margin-left: -3.5%; max-width: 7%;';
-                }
-                break;
-        case 'Holidays @ Hammer':
-        case 'Holidays @ Hammer Series':
-                if ( $is_left ) {
-                        $style_text = 'margin-top: -3.5%; margin-left: 38%; max-width: 7%;';
-                } else {
-                        $style_text = 'margin-top: 3%; margin-left: -3.3%; max-width: 7%;';
-                }
-                break;
-        case 'Music Without Borders':
-        case 'Music Without Borders Series':
-                if ( $is_left ) {
-                        $style_text = 'margin-top: 3%; margin-left: 30%; max-width: 30%;';
-                } else {
-                        $style_text = 'margin-top: 7%; margin-left: -22%; max-width: 36%;';
-                }
-                break;
-        case 'Lights &amp; Action':
-        case 'Lights &amp; Action Series':
-                if ( $is_left ) {
-                        $style_text = 'margin-top: -4%; margin-left: 38%; max-width: 7%;';
-                } else {
-                        $style_text = 'margin-top: 2%; margin-left: -3.5%; max-width: 7%;';
-                }
-                break;
-        default:
-                $style_text = '';
-                break;
-        }
-        return $style_text;
-}
-
-/*
- * This function returns styling for logo in event list.
- * This function is very similar to get_logo_css_margin
- *
- * @param category_text String: category name in text. For example, "Also @ Hammer".
- * @return Styling for the logo. For example, "margin-top: 40px; margin-left: 304px;"
- *         It returns empty string if the category does not match
- */
-function get_logo_css_margin_event_list ( $category_text ) {
-        $style_text = '';
-        switch ($category_text) {
-        case 'Also @ Hammer':
-        case 'Also @ Hammer Series':
-                $style_text = 'margin-top: 2%; margin-left: 15.6%; max-width: 4%;';
-                break;
-        case 'ArtTech':
-        case 'ArtTech Series':
-                $style_text = 'margin-top: 1%; margin-left: 16.7%; max-width: 2%;';
-                break;
-        case 'SJSU @ Hammer':
-        case 'SJSU @ Hammer Series':
-                $style_text = 'margin-top: 1%; margin-left: 16.6%; max-width: 2%;';
-                break;
-        case 'Hammer Speaks':
-        case 'Hammer Speaks Series':
-                $style_text = 'margin-top: 1%; margin-left: 16%; max-width: 3%;';
-                break;
-        case 'Holidays @ Hammer':
-        case 'Holidays @ Hammer Series':
-                $style_text = 'margin-top: 1%; margin-left: 16.6%; max-width: 2%;';
-                break;
-        case 'Music Without Borders':
-        case 'Music Without Borders Series':
-                $style_text = 'margin-top: 1%; margin-left: 10%; max-width: 10%;';
-                break;
-        case 'Lights &amp; Action':
-        case 'Lights &amp; Action Series':
-                $style_text = 'margin-top: 1%; margin-left: 16.6%; max-width: 2%;';
-                break;
-        default:
-                $style_text = '';
-                break;
-        }
-        return $style_text;
-}
-
-/*
- * This function returns styling for logo in past event list.
- * This function is very similar to get_logo_css_margin
- *
- * @param category_text String: category name in text. For example, "Also @ Hammer".
- * @return Styling for the logo. For example, "margin-top: 40px; margin-left: 304px;"
- *         It returns empty string if the category does not match
- */
-function get_logo_css_margin_past_event_list ( $category_text ) {
-        $style_text = '';
-        switch ($category_text) {
-        case 'Also @ Hammer':
-        case 'Also @ Hammer Series':
-                $style_text = 'margin-top: 2%; margin-left: 14%; max-width: 4%;';
-                break;
-        case 'ArtTech':
-        case 'ArtTech Series':
-                $style_text = 'margin-top: 1%; margin-left: 15%; max-width: 2%;';
-                break;
-        case 'SJSU @ Hammer':
-        case 'SJSU @ Hammer Series':
-                $style_text = 'margin-top: 1%; margin-left: 15%; max-width: 2%;';
-                break;
-        case 'Hammer Speaks':
-        case 'Hammer Speaks Series':
-                $style_text = 'margin-top: 1%; margin-left: 14.5%; max-width: 3%;';
-                break;
-        case 'Holidays @ Hammer':
-        case 'Holidays @ Hammer Series':
-                $style_text = 'margin-top: 1%; margin-left: 15%; max-width: 2%;';
-                break;
-        case 'Music Without Borders':
-        case 'Music Without Borders Series':
-                $style_text = 'margin-top: 1%; margin-left: 9%; max-width: 10%;';
-                break;
-        case 'Lights &amp; Action':
-        case 'Lights &amp; Action Series':
-                $style_text = 'margin-top: 1%; margin-left: 15%; max-width: 2%;';
-                break;
-        default:
-                $style_text = '';
-                break;
-        }
-        return $style_text;
-}
 
 /*
  * This function renderes the past event to browser.
@@ -548,82 +240,6 @@ function location_map_shortcode( $atts ){
 }
 add_shortcode( 'location_map', 'location_map_shortcode' );
 
-function get_sub_brand_logo ( $category_text ) {
-        $sjsu_at_hammer_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_sjsu@hammer.jpg';
-        $also_at_hammer_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_also@hammer.jpg';
-        $arttech_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_arttech.jpg';
-        $hammer_speaks_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_hammerspeaks.jpg';
-        $holidays_at_hammer_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_holidays@hammer.jpg';
-        $lights_and_action_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_lights_action.jpg';
-        $music_wo_borders_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_musicwoborders.jpg';
-
-        $subbrand_url = '';
-        switch ($category_text) {
-        case 'Also @ Hammer':
-        case 'Also @ Hammer Series':
-                $subbrand_url = $also_at_hammer_url;
-                break;
-        case 'ArtTech':
-        case 'ArtTech Series':
-                $subbrand_url = $arttech_url;
-                break;
-        case 'SJSU @ Hammer':
-        case 'SJSU @ Hammer Series':
-                $subbrand_url = $sjsu_at_hammer_url;
-                break;
-        case 'Hammer Speaks':
-        case 'Hammer Speaks Series':
-                $subbrand_url = $hammer_speaks_url;
-                break;
-        case 'Holidays @ Hammer':
-        case 'Holidays @ Hammer Series':
-                $subbrand_url = $holidays_at_hammer_url;
-                break;
-        case 'Music Without Borders':
-        case 'Music Without Borders Series':
-                $subbrand_url = $music_wo_borders_url;
-                break;
-        case 'Lights &amp; Action':
-        case 'Lights &amp; Action Series':
-                $subbrand_url = $lights_and_action_url;
-                break;
-        default:
-                $subbrand_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_hammernews.jpg';
-                break;
-        }
-        return $subbrand_url;
-}
-
-function get_sub_brand_url ( $category_text ) {
-    $url = '';
-switch ($category_text) {
-        case 'Also @ Hammer':
-                $url = 'also-hammer';
-                break;
-        case 'ArtTech':
-                $url = '/art-tech';
-                break;
-        case 'SJSU @ Hammer':
-                $url = '/sjsu-hammer';
-                break;
-        case 'Hammer Speaks':
-                $url = '/art-tech';
-                break;
-        case 'Holidays @ Hammer':
-                $url = '/hammer-speaks';
-                break;
-        case 'Music Without Borders':
-                $url = '/music-without-borders';
-                break;
-        case 'Lights &amp; Action':
-                $url = '/lights-and-action';
-                break;
-        default:
-                $url = 'Error';
-                break;
-        }
-        return $url;
-}
 
 function my_theme_enqueue_styles() {
 
@@ -636,3 +252,593 @@ function my_theme_enqueue_styles() {
     '1.2.1' );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+
+class Category
+{
+        // properties
+        private $logo_url; 
+        private $banner_url; 
+        private $logo_css_margin_left;
+        private $logo_css_margin_right;
+        private $color; 
+        private $logo_css_margin_event_list;
+        private $logo_css_margin_past_event_list;
+        private $sub_brand_logo_url;
+        private $sub_brand_url;
+        
+        // Constructor
+        public function __construct(array $args){
+                foreach($args as $key=>$val){
+                        $this->$key = $val;
+                }
+        }
+
+        public function get_logo_url(){
+                return $this->logo_url;
+        }
+
+        public function get_banner_url(){
+                return $this->banner_url;
+        }
+
+        public function get_logo_css_margin($is_left){
+                if ($is_left) return $this->logo_css_margin_left;
+                else return $this->logo_css_margin_right;
+        }
+
+        public function get_color(){
+                return $this->color;
+        }
+
+        public function get_logo_css_margin_event_list(){
+                return $this->logo_css_margin_event_list;
+        }
+
+        public function get_logo_css_margin_past_event_list(){
+                return $this->logo_css_margin_past_event_list;
+        }
+
+        public function get_sub_brand_logo_url(){
+                return $this->sub_brand_logo_url;
+        }
+
+        public function get_sub_brand_url(){
+                return $this->sub_brand_url;
+        }
+
+}
+
+$art_tech = new Category(array(
+        "logo_url" => '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Art-and-Tech.png',                                       
+        "banner_url" => '/wp-content/uploads/2018/03/ArtTech-Logo.png',
+        "logo_css_margin_left" => 'margin-top: -3.5%; margin-left: 37%; max-width: 7%;',
+        "logo_css_margin_right" => 'margin-top: 4%; margin-left: -3.5%; max-width: 7%;',
+        "color" => '--artTech',
+        "logo_css_margin_event_list" => 'margin-top: 1%; margin-left: 16.7%; max-width: 2%;',
+        "logo_css_margin_past_event_list" => 'margin-top: 1%; margin-left: 15%; max-width: 2%;',
+        "sub_brand_logo_url" => 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_arttech.jpg',
+        "sub_brand_url " => '/art-tech'
+));
+
+$lights_action = new Category(array(
+        "logo_url" => '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Lights-and-Action.png',
+        "banner_url" => '/wp-content/uploads/2018/03/Lights-And-Action-Logo.png',
+        "logo_css_margin_left" => 'margin-top: -4%; margin-left: 38%; max-width: 7%;',
+        "logo_css_margin_right" => 'margin-top: 2%; margin-left: -3.5%; max-width: 7%;',
+        "color" => '--lightsAndAction',
+        "logo_css_margin_event_list" => 'margin-top: 1%; margin-left: 16.6%; max-width: 2%;',
+        "logo_css_margin_past_event_list" => 'margin-top: 1%; margin-left: 15%; max-width: 2%;',
+        "sub_brand_logo_url" => 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_lights_action.jpg',
+        "sub_brand_url " => '/lights-and-action'
+));
+
+$music_wo_borders = new Category(array(
+        "logo_url" => '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Music-Without-Borders.png',
+        "banner_url" => '/wp-content/uploads/2018/03/Music-Without-Borders-Logo.png',
+        "logo_css_margin_left" => 'margin-top: 3%; margin-left: 30%; max-width: 30%;',
+        "logo_css_margin_right" => 'margin-top: 7%; margin-left: -22%; max-width: 36%;',
+        "color" => '--musicWithoutBorders',
+        "logo_css_margin_event_list" => 'margin-top: 1%; margin-left: 10%; max-width: 10%;',
+        "logo_css_margin_past_event_list" => 'margin-top: 1%; margin-left: 9%; max-width: 10%;',
+        "sub_brand_logo_url" => 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_musicwoborders.jpg',
+        "sub_brand_url " => '/music-without-borders'
+));
+
+$holidays_at_hammer = new Category(array(
+        "logo_url" => '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Holidays-@-Hammer.png',
+        "banner_url" => '/wp-content/uploads/2018/03/Holidays-At-Hammer-Logo.png',
+        "logo_css_margin_left" => 'margin-top: -3.5%; margin-left: 38%; max-width: 7%;',
+        "logo_css_margin_right" => 'margin-top: 3%; margin-left: -3.3%; max-width: 7%;',
+        "color" => '--holidaysAtHammer',
+        "logo_css_margin_event_list" => 'margin-top: 1%; margin-left: 16.6%; max-width: 2%;',
+        "logo_css_margin_past_event_list" => 'margin-top: 1%; margin-left: 15%; max-width: 2%;',
+        "sub_brand_logo_url" => 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_holidays@hammer.jpg',
+        "sub_brand_url " => '/hammer-speaks'
+));
+
+$hammer_speaks = new Category(array(
+        "logo_url" => '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Hammer-Speaks.png',
+        "banner_url" => '/wp-content/uploads/2018/03/Hammer-Speaks-Logo.png',
+        "logo_css_margin_left" => 'margin-top: -3.8%; margin-left: 38%; max-width: 7%;',
+        "logo_css_margin_right" => 'margin-top: -3.8%; margin-left: -3.5%; max-width: 7%;',
+        "color" => '--hammerSpeaks',
+        "logo_css_margin_event_list" => 'margin-top: 1%; margin-left: 16%; max-width: 3%;',
+        "logo_css_margin_past_event_list" => 'margin-top: 1%; margin-left: 14.5%; max-width: 3%;',
+        "sub_brand_logo_url" => 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_hammerspeaks.jpg',
+        "sub_brand_url " => '/hammer-speaks'
+));
+
+$sjsu_at_hammer = new Category(array(
+        "logo_url" => '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-SJSU@Hammer.png',
+        "banner_url" => '/wp-content/uploads/2018/03/SJSU-At-Hammer-Logo.png',
+        "logo_css_margin_left" => 'margin-top: -3.8%; margin-left: 38%; max-width: 7%;',
+        "logo_css_margin_right" => 'margin-top: -3.8%; margin-left: 2.5%; max-width: 7%;',
+        "color" => '--sjsuAtHammer',
+        "logo_css_margin_event_list" => 'margin-top: 1%; margin-left: 16.6%; max-width: 2%;',
+        "logo_css_margin_past_event_list" => 'margin-top: 1%; margin-left: 15%; max-width: 2%;',
+        "sub_brand_logo_url" => 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_sjsu@hammer.jpg',
+        "sub_brand_url " => '/sjsu-hammer'
+));
+
+$also_at_hammer = new Category(array(
+        "logo_url" => '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Also.png',
+        "banner_url" => '/wp-content/uploads/2018/03/Also-At-Hammer-Logo.png',
+        "logo_css_margin_left" => 'margin-top: 3%; margin-left: 44.9%; max-width: 7%;',
+        "logo_css_margin_right" => 'margin-top: 3%; margin-left: -3.5%; max-width: 7%;',
+        "color" => '--sjsuAtHammer',
+        "logo_css_margin_event_list" => 'margin-top: 2%; margin-left: 15.6%; max-width: 4%;',
+        "logo_css_margin_past_event_list" => 'margin-top: 2%; margin-left: 14%; max-width: 4%;',
+        "sub_brand_logo_url" => 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_also@hammer.jpg',
+        "sub_brand_url " => 'also-hammer'
+));
+
+
+$categories_map = array(
+        'ArtTech' => $art_tech,
+        'ArtTech Series' => $art_tech,
+        'Lights &amp; Action' => $lights_action,
+        'Lights &amp; Action Series' => $lights_action,
+        'Music Without Borders' => $music_wo_borders,
+        'Music Without Borders Series' => $music_wo_borders,
+        'Holidays @ Hammer' => $holidays_at_hammer,
+        'Holidays @ Hammer Series' => $holidays_at_hammer,
+        'Hammer Speaks' => $hammer_speaks,
+        'Hammer Speaks Series' => $hammer_speaks,
+        'SJSU @ Hammer' => $sjsu_at_hammer,
+        'SJSU @ Hammer Series' => $sjsu_at_hammer,
+        'Also @ Hammer' => $also_at_hammer,
+        'Also @ Hammer Series' => $also_at_hammer
+);
+
+
+
+function tribe_get_color_for_categories( $category_text ) {
+        global $categories_map; // must access global scope
+        return $categories_map[$category_text]->get_color();
+}
+
+function get_sub_brand_logo ( $category_text ) {
+        global $categories_map; // must access global scope
+        return $categories_map[$category_text]->get_sub_brand_logo_url();
+}
+
+function get_logo_url ( $category_text ){
+        global $categories_map; // must access global scope
+        return $categories_map[$category_text]->get_logo_url();
+}
+
+function get_banner_url ( $category_text ){
+        global $categories_map; // must access global scope
+        return $categories_map[$category_text]->get_banner_url();
+}
+
+function get_logo_css_margin($category_text, $is_left){
+        global $categories_map; // must access global scope
+        return $categories_map[$category_text]->get_logo_css_margin($is_left);
+}
+
+function get_logo_css_margin_event_list ( $category_text ){
+        global $categories_map; // must access global scope
+        return $categories_map[$category_text]->get_logo_css_margin_event_list();
+}
+
+function get_logo_css_margin_past_event_list ( $category_text ){
+        global $categories_map; // must access global scope
+        return $categories_map[$category_text]->get_logo_css_margin_past_event_list();
+}
+
+function get_sub_brand_url ( $category_text ) {
+        global $categories_map; // must access global scope
+        return $categories_map[$category_text]->get_sub_brand_logo_url();
+}
+
+
+// BEFORE REFACTORING
+
+// function get_sub_brand_url ( $category_text ) {
+//         $url = '';
+//     switch ($category_text) {
+//             case 'Also @ Hammer':
+//                     $url = 'also-hammer';
+//                     break;
+//             case 'ArtTech':
+//                     $url = '/art-tech';
+//                     break;
+//             case 'SJSU @ Hammer':
+//                     $url = '/sjsu-hammer';
+//                     break;
+//             case 'Hammer Speaks':
+//                     $url = '/art-tech';
+//                     break;
+//             case 'Holidays @ Hammer':
+//                     $url = '/hammer-speaks';
+//                     break;
+//             case 'Music Without Borders':
+//                     $url = '/music-without-borders';
+//                     break;
+//             case 'Lights &amp; Action':
+//                     $url = '/lights-and-action';
+//                     break;
+//             default:
+//                     $url = 'Error';
+//                     break;
+//             }
+//             return $url;
+//     }
+
+//     function get_sub_brand_logo ( $category_text ) {
+//         $sjsu_at_hammer_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_sjsu@hammer.jpg';
+//         $also_at_hammer_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_also@hammer.jpg';
+//         $arttech_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_arttech.jpg';
+//         $hammer_speaks_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_hammerspeaks.jpg';
+//         $holidays_at_hammer_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_holidays@hammer.jpg';
+//         $lights_and_action_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_lights_action.jpg';
+//         $music_wo_borders_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_musicwoborders.jpg';
+
+//         $subbrand_url = '';
+//         switch ($category_text) {
+//         case 'Also @ Hammer':
+//         case 'Also @ Hammer Series':
+//                 $subbrand_url = $also_at_hammer_url;
+//                 break;
+//         case 'ArtTech':
+//         case 'ArtTech Series':
+//                 $subbrand_url = $arttech_url;
+//                 break;
+//         case 'SJSU @ Hammer':
+//         case 'SJSU @ Hammer Series':
+//                 $subbrand_url = $sjsu_at_hammer_url;
+//                 break;
+//         case 'Hammer Speaks':
+//         case 'Hammer Speaks Series':
+//                 $subbrand_url = $hammer_speaks_url;
+//                 break;
+//         case 'Holidays @ Hammer':
+//         case 'Holidays @ Hammer Series':
+//                 $subbrand_url = $holidays_at_hammer_url;
+//                 break;
+//         case 'Music Without Borders':
+//         case 'Music Without Borders Series':
+//                 $subbrand_url = $music_wo_borders_url;
+//                 break;
+//         case 'Lights &amp; Action':
+//         case 'Lights &amp; Action Series':
+//                 $subbrand_url = $lights_and_action_url;
+//                 break;
+//         default:
+//                 $subbrand_url = 'http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/03/425x35_hammernews.jpg';
+//                 break;
+//         }
+//         return $subbrand_url;
+// }
+
+// /*
+//  * This function returns styling for logo in past event list.
+//  * This function is very similar to get_logo_css_margin
+//  *
+//  * @param category_text String: category name in text. For example, "Also @ Hammer".
+//  * @return Styling for the logo. For example, "margin-top: 40px; margin-left: 304px;"
+//  *         It returns empty string if the category does not match
+//  */
+// function get_logo_css_margin_past_event_list ( $category_text ) {
+//         $style_text = '';
+//         switch ($category_text) {
+//         case 'Also @ Hammer':
+//         case 'Also @ Hammer Series':
+//                 $style_text = 'margin-top: 2%; margin-left: 14%; max-width: 4%;';
+//                 break;
+//         case 'ArtTech':
+//         case 'ArtTech Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 15%; max-width: 2%;';
+//                 break;
+//         case 'SJSU @ Hammer':
+//         case 'SJSU @ Hammer Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 15%; max-width: 2%;';
+//                 break;
+//         case 'Hammer Speaks':
+//         case 'Hammer Speaks Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 14.5%; max-width: 3%;';
+//                 break;
+//         case 'Holidays @ Hammer':
+//         case 'Holidays @ Hammer Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 15%; max-width: 2%;';
+//                 break;
+//         case 'Music Without Borders':
+//         case 'Music Without Borders Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 9%; max-width: 10%;';
+//                 break;
+//         case 'Lights &amp; Action':
+//         case 'Lights &amp; Action Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 15%; max-width: 2%;';
+//                 break;
+//         default:
+//                 $style_text = '';
+//                 break;
+//         }
+//         return $style_text;
+// }
+
+// /*
+//  * This function returns styling for logo in event list.
+//  * This function is very similar to get_logo_css_margin
+//  *
+//  * @param category_text String: category name in text. For example, "Also @ Hammer".
+//  * @return Styling for the logo. For example, "margin-top: 40px; margin-left: 304px;"
+//  *         It returns empty string if the category does not match
+//  */
+// function get_logo_css_margin_event_list ( $category_text ) {
+//         $style_text = '';
+//         switch ($category_text) {
+//         case 'Also @ Hammer':
+//         case 'Also @ Hammer Series':
+//                 $style_text = 'margin-top: 2%; margin-left: 15.6%; max-width: 4%;';
+//                 break;
+//         case 'ArtTech':
+//         case 'ArtTech Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 16.7%; max-width: 2%;';
+//                 break;
+//         case 'SJSU @ Hammer':
+//         case 'SJSU @ Hammer Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 16.6%; max-width: 2%;';
+//                 break;
+//         case 'Hammer Speaks':
+//         case 'Hammer Speaks Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 16%; max-width: 3%;';
+//                 break;
+//         case 'Holidays @ Hammer':
+//         case 'Holidays @ Hammer Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 16.6%; max-width: 2%;';
+//                 break;
+//         case 'Music Without Borders':
+//         case 'Music Without Borders Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 10%; max-width: 10%;';
+//                 break;
+//         case 'Lights &amp; Action':
+//         case 'Lights &amp; Action Series':
+//                 $style_text = 'margin-top: 1%; margin-left: 16.6%; max-width: 2%;';
+//                 break;
+//         default:
+//                 $style_text = '';
+//                 break;
+//         }
+//         return $style_text;
+// }
+
+// /*
+//  * This function returns styling for logo in home page.
+//  * Please take a look at spec for https://projects.invisionapp.com/share/RNELD1MGY#/screens/266256245
+//  * The location of logo is followings:
+//  * * Category of the event
+//  * * Location of image
+//  *
+//  * @param category_text String: category name in text. For example, "Also @ Hammer".
+//  * @param is_left Boolean: Location of image.
+//  *        If true, it means that image is displayed on left column.
+//  *        If false, it means that image is displayed on right column.
+//  * @return Styling for the logo. For example, "margin-top: 40px; margin-left: 304px;"
+//  *         It returns empty string if the category does not match
+//  *
+//  * TODO Need to make sure this works on both dev and production (Maybe url can be an issue)
+//  */
+// function get_logo_css_margin ( $category_text, $is_left ) {
+//         $style_text = '';
+//         switch ($category_text) {
+//         case 'Also @ Hammer':
+//         case 'Also @ Hammer Series':
+//                 if ( $is_left ) {
+//                         $style_text = 'margin-top: 3%; margin-left: 44.9%; max-width: 7%;';
+//                 } else {
+//                         $style_text = 'margin-top: 3%; margin-left: -3.5%; max-width: 7%;';
+//                 }
+//                 break;
+//         case 'ArtTech':
+//         case 'ArtTech Series':
+//                 if ( $is_left ) {
+//                         $style_text = 'margin-top: -3.5%; margin-left: 37%; max-width: 7%;';
+//                 } else {
+//                         $style_text = 'margin-top: 4%; margin-left: -3.5%; max-width: 7%;';
+//                 }
+//                 break;
+//         case 'SJSU @ Hammer':
+//         case 'SJSU @ Hammer Series':
+//                 if ( $is_left ) {
+//                         $style_text = 'margin-top: -3.8%; margin-left: 38%; max-width: 7%;';
+//                 } else {
+//                         $style_text = 'margin-top: -3.8%; margin-left: 2.5%; max-width: 7%;';
+//                 }
+//                 break;
+//         case 'Hammer Speaks':
+//         case 'Hammer Speaks Series':
+//                 if ( $is_left ) {
+//                         $style_text = 'margin-top: -3.8%; margin-left: 38%; max-width: 7%;';
+//                 } else {
+//                         $style_text = 'margin-top: -3.8%; margin-left: -3.5%; max-width: 7%;';
+//                 }
+//                 break;
+//         case 'Holidays @ Hammer':
+//         case 'Holidays @ Hammer Series':
+//                 if ( $is_left ) {
+//                         $style_text = 'margin-top: -3.5%; margin-left: 38%; max-width: 7%;';
+//                 } else {
+//                         $style_text = 'margin-top: 3%; margin-left: -3.3%; max-width: 7%;';
+//                 }
+//                 break;
+//         case 'Music Without Borders':
+//         case 'Music Without Borders Series':
+//                 if ( $is_left ) {
+//                         $style_text = 'margin-top: 3%; margin-left: 30%; max-width: 30%;';
+//                 } else {
+//                         $style_text = 'margin-top: 7%; margin-left: -22%; max-width: 36%;';
+//                 }
+//                 break;
+//         case 'Lights &amp; Action':
+//         case 'Lights &amp; Action Series':
+//                 if ( $is_left ) {
+//                         $style_text = 'margin-top: -4%; margin-left: 38%; max-width: 7%;';
+//                 } else {
+//                         $style_text = 'margin-top: 2%; margin-left: -3.5%; max-width: 7%;';
+//                 }
+//                 break;
+//         default:
+//                 $style_text = '';
+//                 break;
+//         }
+//         return $style_text;
+// }
+
+// /*
+//  * This function returns the url for banner used in the home page
+//  * based on the category of the event.
+//  * @param category_text String: category name in text. For example, "Also @ Hammer".
+//  * @return url for the banner. For example,
+//  *         It returns empty string if the category does not match
+//  *
+//  * TODO Need to make sure this works on both dev and production (Maybe url can be an issue)
+//  */
+// function get_banner_url ( $category_text ) {
+//         $url = '';
+//         switch ($category_text) {
+//         case 'Also @ Hammer':
+//         case 'Also @ Hammer Series':
+//                 $url = '/wp-content/uploads/2018/03/Also-At-Hammer-Logo.png';
+//                 break;
+//         case 'ArtTech':
+//         case 'ArtTech Series':
+//                 $url = '/wp-content/uploads/2018/03/ArtTech-Logo.png';
+//                 break;
+//         case 'SJSU @ Hammer':
+//         case 'SJSU @ Hammer Series':
+//                 $url = '/wp-content/uploads/2018/03/SJSU-At-Hammer-Logo.png';
+//                 break;
+//         case 'Hammer Speaks':
+//         case 'Hammer Speaks Series':
+//                 $url = '/wp-content/uploads/2018/03/Hammer-Speaks-Logo.png';
+//                 break;
+//         case 'Holidays @ Hammer':
+//         case 'Holidays @ Hammer Series':
+//                 $url = '/wp-content/uploads/2018/03/Holidays-At-Hammer-Logo.png';
+//                 break;
+//         case 'Music Without Borders':
+//         case 'Music Without Borders Series':
+//                 $url = '/wp-content/uploads/2018/03/Music-Without-Borders-Logo.png';
+//                 break;
+//         case 'Lights &amp; Action':
+//         case 'Lights &amp; Action Series':
+//                 $url = '/wp-content/uploads/2018/03/Lights-And-Action-Logo.png';
+//                 break;
+//         default:
+//                 $url = '';
+//                 break;
+//         }
+//         return $url;
+// }
+
+// /*
+//  * This function returns the url for logo used in the home page
+//  * based on the category of the event.
+//  * @param category_text String: category name in text. For example, "Also @ Hammer".
+//  * @return url for the logo. For example, http://hammertheatre.staging.wpengine.com/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-SJSU@Hammer.png
+//  *         It returns empty string if the category does not match
+//  *
+//  * TODO Need to make sure this works on both dev and production (Maybe url can be an issue)
+//  */
+// function get_logo_url ( $category_text ) {
+//         $url = '';
+//         switch ($category_text) {
+//         case 'Also @ Hammer':
+//         case 'Also @ Hammer Series':
+//                 $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Also.png';
+//                 break;
+//         case 'ArtTech':
+//         case 'ArtTech Series':
+//                 $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Art-and-Tech.png';
+//                 break;
+//         case 'SJSU @ Hammer':
+//         case 'SJSU @ Hammer Series':
+//                 $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-SJSU@Hammer.png';
+//                 break;
+//         case 'Hammer Speaks':
+//         case 'Hammer Speaks Series':
+//                 $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Hammer-Speaks.png';
+//                 break;
+//         case 'Holidays @ Hammer':
+//         case 'Holidays @ Hammer Series':
+//                 $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Holidays-@-Hammer.png';
+//                 break;
+//         case 'Music Without Borders':
+//         case 'Music Without Borders Series':
+//                 $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Music-Without-Borders.png';
+//                 break;
+//         case 'Lights &amp; Action':
+//         case 'Lights &amp; Action Series':
+//                 $url = '/wp-content/uploads/2018/02/HAMR-0001_Website_Design_Template_R3_Graphic-Lights-and-Action.png';
+//                 break;
+//         default:
+//                 $url = '';
+//                 break;
+//         }
+//         return $url;
+// }
+
+// /*
+//  * This function gets the category name
+//  * and returns the color in hex
+//  */
+// function tribe_get_color_for_categories ( $category_text ) {
+//         $color = '';
+//         switch ($category_text) {
+//         case 'Also @ Hammer':
+//         case 'Also @ Hammer Series':
+//                 $color = '--alsoAtHammer';
+//                 break;
+//         case 'ArtTech':
+//         case 'ArtTech Series':
+//                 $color = '--artTech';
+//                 break;
+//         case 'SJSU @ Hammer':
+//         case 'SJSU @ Hammer Series':
+//                 $color = '--sjsuAtHammer';
+//                 break;
+//         case 'Hammer Speaks':
+//         case 'Hammer Speaks Series':
+//                 $color = '--hammerSpeaks';
+//                 break;
+//         case 'Holidays @ Hammer':
+//         case 'Holidays @ Hammer Series':
+//                 $color = '--holidaysAtHammer';
+//                 break;
+//         case 'Music Without Borders':
+//         case 'Music Without Borders Series':
+//                 $color = '--musicWithoutBorders';
+//                 break;
+//         case 'Lights &amp; Action':
+//         case 'Lights &amp; Action Series':
+//                 $color = '--lightsAndAction';
+//                 break;
+//         default:
+//                 $color = '--gray';
+//                 break;
+//         }
+//         return $color;
+// }
