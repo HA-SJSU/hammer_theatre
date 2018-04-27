@@ -122,18 +122,18 @@ function show_past_event ( $category="", $start_date="1/1/2017", $num_post=10 ) 
 
                   echo '<div id="event-subcontainer2-with-logo" class="margin-left-60" style="padding-right: 5%;">';
                     echo '<h2><a href="'.esc_url( tribe_get_event_link($postID) ).'">'.$post->post_title.'</a><h2>';
-                     echo '<!-- subtitle -->';
+                     echo '<!-- Subtitle -->';
                      echo '<h4 class="subtitle">';
-                     echo get_post_meta($postID, 'subtitle', true);
+                     echo get_post_meta($postID, 'Subtitle', true);
                      echo '</h4>';
-                     echo '<!-- End of subtitle -->';
+                     echo '<!-- End of Subtitle -->';
                     echo '<div class="tribe-events-list-event-description tribe-events-content description entry-summary">';
                         echo '<p>'.get_the_excerpt($postID).'</p>';
                     echo'</div>';
                   echo '</div>';
 
                   echo '<div id="event-subcontainer3" class="margin-left-20">';
-                    echo '<span style="font-size: 13px; font-weight: 700">'.tribe_get_start_date($post).'</span>';
+                    echo '<span style="font-size: 13px; font-weight: 700">'.show_event_dates($post->ID).'</span>';
                     echo '<a href="'.esc_url( tribe_get_event_link($postID) ).'" class="button learn-more-button" rel="bookmark" style="background-color: var('.$category_color.');">Learn More</a>';
                   echo '</div>';
                 echo '</div>';
@@ -160,13 +160,84 @@ add_shortcode( 'show_past_event', 'show_past_event_sc_wrapper' );
  * @param event_id
  * @return None. This function does not return anything. It only renders recurring event dates to the browser
  */
-function show_recurring_dates ( $event_id ) {
-        $dates =  tribe_get_recurrence_start_dates( $event_id );
-        foreach ($dates as $date) {
+function show_recurring_dates ( $event_id, $is_home=false ) {
+        $dates = tribe_get_recurrence_start_dates( $event_id );
+
+        if ($is_home) {
+                // echo first date
+                $first_date_text = strtotime($dates[0]);
+                echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $first_date_text).'</span><br>';
+
+                // loop from 1 to 3
+                for ($i = 1; $i < 3; $i++) {
+                        $date_text = strtotime($dates[$i]);
+                        // if length == 2
+                        if (count($dates) == 2 ) {
+                                // print 2nd date w/o comma
+                                echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>';
+                                break;
+                        } else {
+                                // if (counter < 2)
+                                if ($i < 2) {
+                                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span><br>';
+                                } else {
+                                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span><br>';
+                                        echo '<span>Click <a style="text-decoration: underline !important;" href='.tribe_get_event_link( $event_id ).' >here</a> to see more dates.</span>';
+                                }
+                        }
+                }
+        } else {
+                foreach ($dates as $date) {
                 $date_text = strtotime($date);
-                echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span><br>';
+                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span><br>';
+                }
         }
 
+
+
+        /*
+        foreach ($dates as $date) {
+                $date_text = strtotime($date);
+                if ($is_home) {
+                        if ($counter < 2) {
+                                if (count($dates) == 2) {
+                                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>';
+                                        echo 'In count == 2';
+                                } else {
+                                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>, ';
+                                        echo 'In count < 2';
+                                }
+                        } else if ($counter == 2){
+                                echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span>... <a href='.tribe_get_event_link( $event_id ).'>More dates</a>';
+                                echo '<p>'.tribe_get_event_link( $event_id ).'</p>';
+                        } else {
+                                break;
+                        }
+                        $counter++;
+                        
+                } else {
+                        echo '<span class="tribe-event-date-start">'.date('F j \@  g:i a', $date_text).'</span><br>';
+                }
+        }
+         */
+}
+
+
+function show_event_dates ( $event_id, $is_home=false ) {
+        echo '<div class="event-date-container">';
+        if ( tribe_is_recurring_event($event_id) ) {
+                show_recurring_dates( $event_id, $is_home );
+        } else {
+                // Single day event
+                $custom_date = tribe_get_event_meta(null, 'custom_date', true);
+                if($custom_date){
+                        echo $custom_date;
+                }
+                else {
+                        echo tribe_get_start_date($event_id);
+                }
+        }
+        echo '</div>';
 }
 
 /*
@@ -249,7 +320,7 @@ function my_theme_enqueue_styles() {
     wp_enqueue_style( 'child-style',
     get_stylesheet_directory_uri() . '/style.css',
     array($parent_style),
-    '1.2.1' );
+    '1.2.3' );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 

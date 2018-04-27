@@ -28,18 +28,26 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Testing loading icon -->
-<div id="load"></div>
-<!-- END of Testing loading icon -->
+<!-- Loading icon -->
+<div id="load">
+<div style="height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;">
+<p style="padding-bottom: 182px;">LOADING...</p>
+</div>
+</div>
+
 <script>
         document.onreadystatechange = function () {
           var state = document.readyState
           if (state == 'complete') {
-                 document.getElementById('interactive');
-                 document.getElementById('load').style.visibility="hidden";
+            document.getElementById('interactive');
+            document.getElementById('load').style.visibility="hidden";
           }
         }
 </script>
+<!-- END of Loading icon -->
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>

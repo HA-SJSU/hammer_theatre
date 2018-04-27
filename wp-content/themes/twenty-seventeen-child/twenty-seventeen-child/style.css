@@ -1,0 +1,1777 @@
+/*
+Theme Name: Twenty-Seventeen-Child
+Theme URI: https://wordpress.org/themes/twentyseventeen/
+Author: David Vu, Yuki Kuroshima & Yuki2
+Template: twentyseventeen
+Description: Main stlye sheet for HammerTheatre.com
+Version: 1.2.2
+
+*/
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+Utility
+--------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --gray: #6d6d6d;
+  --hammer-blue: #264488;
+  --eventButtonsColor: #4199ca;
+  --form-white: white;
+  --form-placeholder-text: #BEBEC8;
+
+  /* Series Colors (below) */
+  --alsoAtHammer:#BA529B;
+  --artTech: #A6CD37;
+  --sjsuAtHammer: #3162AE;
+  --hammerSpeaks: #EA1C28;
+  --holidaysAtHammer: #6D6AAD;
+  --musicWithoutBorders: #42bca4;
+  --lightsAndAction: #fdb744;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: -7em !important;
+}
+
+
+/* Utility */
+.width-100-percent {width: 100%;}
+.width-90-percent {width: 90%;}
+.width-85-percent {width: 85%;}
+.width-60-percent {width: 60%;}
+.width-65-percent {width: 65%;}
+.width-75-percent {width: 75%;}
+.width-70-percent {width: 70%;}
+.width-20-percent {width: 20%;}
+.width-50-percent {width: 50%;}
+.width-40-percent {width: 40%;}
+
+
+.max-width-60-percent {max-width: 60% !important;}
+.max-width-50-percent {max-width: 50% !important;}
+.max-width-40-percent {max-width: 40% !important;}
+
+/* NOTE: These will be be changed to half their value for mobile version */
+.margin-top-20 {margin-top: 2rem !important;}
+.margin-left-20 {margin-left: 2rem !important;}
+.margin-right-20 {margin-right: 2rem !important;}
+.margin-bottom-20 {margin-bottom: 2rem !important;}
+
+.margin-top-30 {margin-top: 3rem !important;}
+.margin-left-30 {margin-left: 3rem !important;}
+.margin-right-30 {margin-right: 3rem !important;}
+.margin-bottom-30 {margin-bottom: 3rem !important;}
+
+.margin-top-50 {margin-top: 5rem !important;}
+.margin-left-50 {margin-left: 5rem !important;}
+.margin-right-50 {margin-right: 5rem !important;}
+.margin-bottom-50 {margin-bottom: 5rem !important;}
+
+.margin-top-60 {margin-top: 6rem !important;}
+.margin-left-60 {margin-left: 6rem !important;}
+.margin-right-60 {margin-right: 6rem !important;}
+.margin-bottom-60 {margin-bottom: 6rem !important;}
+
+.margin-top-80 {margin-top: 8rem !important;}
+.margin-left-80 {margin-left: 8rem !important;}
+.margin-right-80 {margin-right: 8rem !important;}
+.margin-bottom-80 {margin-bottom: 8rem !important;}
+/* END */
+
+.margin-auto {margin: auto;}
+
+.font-weight-500 {font-weight: 500 !important;}
+.font-weight-600 {font-weight: 600 !important;}
+.font-weight-700 {font-weight: 700 !important;}
+
+.font-size-34 {font-size: 3.4rem !important;}
+.font-size-24 {font-size: 2.4rem !important;}
+.font-size-20 {font-size: 2.0rem !important;}
+.font-size-18 {font-size: 1.8rem !important;}
+.font-size-16 {font-size: 1.6rem !important;}
+
+.min-width-300 {min-width: 300px;}
+
+.margin-0-auto { margin: 0 auto; }
+
+.color-white {color: var(--white) !important; }
+
+.inline-block { display: inline-block; }
+
+.va-text-top { vertical-align: text-top; }
+
+.va-top { vertical-align: top; }
+
+.va-text-middle { vertical-align: middle; }
+
+.va-text-bottom { vertical-align: text-bottom;}
+
+/* Series Colors */
+.background-hammerBlue { background-color: var(--hammer-blue); }
+.bg-color-alsoAtHammer { background-color: var(--alsoAtHammer); }
+.bg-color-artTech { background-color: var(--artTech); }
+.bg-color-sjsuAtHammer { background-color: var(--sjsuAtHammer); }
+.bg-color-hammerSpeaks { background-color: var(--hammerSpeaks); }
+.bg-color-holidaysAtHammer { background-color: var(--holidaysAtHammer); }
+.bg-color-musicWithoutBorders { background-color: var(--musicWithoutBorders); }
+.bg-color-lightsAndAction { background-color: var(--lightsAndAction); }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.float-left { float: left; }
+
+.float-right { float: right; }
+
+.white-text,
+.white-text *{
+  color: var(--white) !important;
+}
+
+.hammerblue-text { color: var(--hammer-blue) !important; }
+
+/* Flex horizontaly and vertically center container */
+.flex-hor-ver-venter-container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.underline { text-decoration: underline; }
+
+.margin-btm-0 { margin-bottom: 0 !important; }
+
+.height-100-percent { height: 100%; }
+
+.marginLeft {margin-left: 6.5% !important;}
+.marginRight {margin-right: 6.5% !important;}
+
+.margin-bottom { margin-bottom: 82px; }
+
+.paddingLeft {padding-left: 6.5% !important;}
+.paddingRight {padding-right: 6.5% !important;}
+
+.entry-content {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
+}
+
+.entry-content a img {
+  box-shadow: 0 0 !important;
+}
+
+.button {
+  align-items: center;
+  background-color: grey;
+  color: rgb(255, 255, 255);
+  display: flex !important;
+  font-size: 12px;
+  font-weight: 300;
+  height: 30px;
+  justify-content: center;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0px;
+  text-decoration: none;
+  width: 180px;
+}
+
+/*--------------------------------------------------------------
+GLOBAL
+--------------------------------------------------------------*/
+
+/* Default font-size is 16px, this makes it 10px */
+html {font-size: 62.5%;}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrap {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: none;
+}
+
+.site-content { padding-top: 0; }
+
+.wpb_content_element { margin-bottom: 0 !important;}
+
+.vc_column-inner {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.vc_row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.vc_row.vc_column-gap-20>.vc_column_container { padding: 0 !important; }
+
+.vc_btn3-container { margin-bottom: 0 !important;}
+
+a {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+}
+
+p, li {
+  font-size: 1.6rem;
+  line-height: 3rem !important;
+  letter-spacing: 0;
+}
+
+h1, h2, h4, h5, h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 3.4rem;
+}
+
+h2 {
+  font-size: 2.4rem !important;
+  font-weight: 500 !important;
+}
+
+h3 {
+  font-size: 2rem !important;
+  font-weight: 400 !important;
+}
+
+h4 {
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+
+.panel-content .wrap {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+}
+
+ul {
+  margin-left: 1.8rem;
+  margin-bottom: 0;
+}
+
+/* Loading Icon */
+#load{
+  width:100%;
+  height:100%;
+  position:fixed;
+  z-index:9999;
+  background:url("https://loading.io/spinners/coolors/lg.palette-rotating-ring-loader.gif") no-repeat center center white;
+}
+
+/*--------------------------------------------------------------
+Global - Header
+--------------------------------------------------------------*/
+.site-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: normal;
+  letter-spacing: normal;
+  padding-top: 10px;
+}
+
+#boxoffice-copy h1{
+    float: right;
+    padding-top: 4px;
+    padding-right: 2.5rem;
+}
+
+#mobile-sjsu-copy {
+    display: none;
+}
+
+/* Icon is 1px smaller than facebook icon */
+#instagram-icon img {
+  border-top: 1px solid var(--white) !important;
+}
+
+#facebook-icon {margin-right: 2rem;}
+#instagram-icon {margin-right: 2rem;}
+#sjsu-copy {padding-left: 3rem}
+
+
+.site-branding {
+  background-color: var(--hammer-blue);
+  height: 50px;
+  padding-left: 6.5%;
+  padding-right: 6.5%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#site-branding-wrap {
+  padding-left: 3.5em;
+  padding-right: 1em;
+}
+
+#sitebranding-right div {
+  display: inline-block;
+  float: right;
+}
+
+div.site-title h1 {
+  font-size: 1.7rem;
+  white-space: nowrap;
+}
+
+#sitebranding-right {
+  width: 100%;
+  flex: 20 20;
+}
+
+/*--------------------------------------------------------------
+Global - Navigation Bar
+--------------------------------------------------------------*/
+div.menu-top-menu-container li.menu-item {
+  margin: 0 2em;
+}
+
+#site-navigation {
+  padding-left: 6.2%;
+  padding-right: 6.5%;
+}
+
+.events-tickets-submenu ul {
+  margin-left: 50% !important;
+  padding: 3px 0px 3px 13px !important;
+}
+
+#custom-logo {
+  display: inline-block;
+}
+
+#top-menu-container {
+  width: 100%;
+}
+.menu-item a {float:right;}
+.menu-item {margin-right: 0 !important;}
+.dashicons-menu {margin-right: 0 !important;}
+
+/* More */
+#menu-item-565 {margin-right: 0;}
+
+#top-menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-item a {
+  padding-right: 0 !important;
+}
+
+#top-menu li {
+  align-self: center;
+}
+
+/* Nav image */
+#top-menu #menu-item-379 {flex: 0.8 0.8;}
+
+/* Events & Tickets */
+#top-menu #menu-item-114 {flex: 1.2 1.2;}
+
+/* Rentals */
+#top-menu #menu-item-128 {flex: 0.5 0.5;}
+
+/* About */
+#top-menu #menu-item-64 {flex: 0.5 0.5;}
+
+/* Contact */
+#top-menu #menu-item-34 {flex: 0.5 0.5;}
+
+/* More */
+#top-menu #menu-item-565 {flex: 0.4 0.4;}
+
+div.menu-top-menu-container li.menu-item {
+  margin-left: 0 !important;
+}
+
+.menu-top-menu-container {
+  display: inline-block;
+}
+
+#top-menu li a {
+  color: var(--hammer-blue);
+  font-size: 1.8rem;
+  padding: 0;
+  padding-right: 1rem;
+  font-weight: 700;
+}
+
+.sub-menu {
+  padding: 3px 0px 3px 13px !important;
+}
+.sub-menu li a {
+  font-weight: 600 !important;
+}
+
+/*--------------------------------------------------------------
+Global - Footer
+--------------------------------------------------------------*/
+
+.widget-area {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-widget-1 {
+  flex: 1 1;
+}
+
+.footer-widget-2 {
+  padding-left: 5rem;
+  flex: 0.8 0.8;
+}
+
+.footer-widget-3 {
+  padding-left: 3rem;
+  flex: 0.8 0.8;
+}
+
+.footer-widget-4 {
+  flex: 0.5 0.5;
+}
+
+.widget-title {
+  font-size: 1.2rem !important;
+}
+
+footer .textwidget p {
+  font-size: 1.3rem;
+  line-height: 2.4rem;
+}
+
+#media_image-2 {
+  width: 80%;
+}
+
+#media_image-3 {
+  width: 60%;
+}
+
+.widget-area {
+  background-color: var(--hammer-blue);
+}
+
+
+.panel-content .wrap {
+  padding-top: 0;
+}
+
+.site-footer .wrap {
+  padding-top: 0;
+}
+
+.site-footer .widget-area {
+  padding: 4em 6.5% 2em 6.5%;
+}
+
+.textwidget p,
+.textwidget p a,
+.widget-title {
+  color: var(--white) !important;
+}
+
+.site-info p {
+  color: var(--hammer-blue);
+  padding-left: 6.5%;
+}
+
+.nav-image {
+  float: left;
+  margin-right: 20px;
+}
+
+#text-13 {
+  padding-bottom: 1em;
+}
+
+#text-15{
+  float: right;
+}
+/* Styling the subscribe link */
+#custom_html-3 .signup-link {
+  background-color: var(--hammer-blue);
+  border-width: 2em;
+  border-color: var(--white) !important;
+  color: var(--white);
+  border: solid;
+  font-size: 1.3rem;
+  padding: 1rem;
+}
+
+/** Overwritten to extend entry-content width to 100% **/
+
+body.page-two-column:not(.archive) #primary .entry-content {
+  /* float: right; */
+  width: 100%;
+}
+
+.menu-item-565 a span,
+.menu-item-565 a svg.icon.icon-angle-down {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+Global - Location Map
+--------------------------------------------------------------*/
+
+
+/* ---------------------------------------
+Global - Banners
+--------------------------------------- */
+
+#upcoming-events-banner div,
+#keep-in-touch-banner div,
+#home-lookback-banner div {
+  margin-bottom: 0;
+}
+
+#upcoming-events-banner,
+#keep-in-touch-banner,
+#rentals-conference-banner {
+  width: 100%;
+  background-color: var(--hammer-blue);
+  color: var(--white) !important;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/* Look back banner in home page */
+#look-back-container {
+  display: flex;
+  float: right;
+}
+.look-back-img-container {
+  margin-right: 30px;
+}
+
+.upcoming-events-banner-noButton,
+#rentals-contact-us-banner,
+#rentals-upcoming-events-banner,
+ {
+  background-color: var(--hammer-blue);
+  color: var(--white) !important;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.series-banner {
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.banner-img,
+.banner-img2 img {
+  display: block;
+  width: 100%;
+  padding-left: 6.5%;
+  padding-right: 6.5%;
+}
+
+.upcoming-event-banner {
+  height: 180px;
+  display: flex;
+  align-items: center;
+}
+
+.past-events-banner {
+  margin-left: -7.5%;
+  margin-right: -7.5%;
+}
+
+/* ---------------------------------------
+Global - Events
+--------------------------------------- */
+.event-date-container {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+
+/*--------------------------------------------------------------
+Home
+--------------------------------------------------------------*/
+
+#featured-container {display: flex; flex-direction: row; }
+
+#home-more-container {display: flex; flex-direction: row;}
+
+.home-event-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#mob-hammer-logo-row {display: none;}
+
+
+/*--------------------------------------------------------------
+Home - Image Caraousel
+--------------------------------------------------------------*/
+.icon-next,
+.icon-prev {
+  margin-top: -15px !important;
+}
+
+.vc_carousel-indicators {
+  display: none;
+}
+
+.vc_images_carousel .vc_carousel-control.vc_right,
+.vc_images_carousel .vc_carousel-control.vc_left {
+  background-color: var(--hammer-blue);
+  color: var(--white) !important;
+  text-decoration: none !important;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+Home - Featured Posts
+--------------------------------------------------------------*/
+
+.post-categories {
+  list-style-type: none;
+}
+
+/* temporary until hammer news logo is created */
+.featured-series {
+  margin: 0;
+  text-align: center;
+  color: var(--white) !important;
+  font-size: 2rem !important;
+  font-weight: 400 !important;
+}
+
+.featured-post-title {
+  font-size: 2.4rem !important;
+  font-weight: 500 !important;
+  margin: 0;
+  padding: 0;
+}
+
+.featured-post-excerpt a {
+  color: var(--eventButtonsColor);
+}
+
+/*--------------------------------------------------------------
+Home - (4) Upcoming Events
+--------------------------------------------------------------*/
+.featured-event-title {
+  padding: 0;
+  font-size: 2.4rem !important;
+  font-weight: 500 !important;
+}
+
+#home-event-img-1,
+#home-event-img-3 {
+  margin-right: 20px;
+}
+
+#home-event-img-2,
+#home-event-img-4 {
+  margin-left: 20px;
+}
+
+/* For each events seriese */
+.home-event-series {
+  font-size: 2rem !important;
+  font-weight: 400 !important;
+}
+
+.home-event-button {
+  /* Gets rid of shadow underline for anchor tags */
+  display: inline-block;
+  width: 32.5rem;
+  color: var(--white) !important;
+  height: 4.5rem;
+  text-transform: uppercase;
+}
+
+.buy-tickets-link {
+  text-decoration: underline !important;
+  font-size: 1.7rem !important;
+}
+
+.single-event-buy-ticket-button-container {
+    background-color: var(--white);
+    width: 20rem;
+    height: 3rem;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.buy-ticket-button {
+  font-size: 1.2rem !important;
+  color: var(--white);
+  height: 18px;
+}
+
+.home-event-logo {
+    position: absolute;
+    z-index: 0;
+}
+
+/*--------------------------------------------------------------
+Home - Look back banner
+--------------------------------------------------------------*/
+#home-lookback-banner {
+  background-color: #5597c8;
+  height: 180px;
+  color: var(--white) !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#home-lookback-banner-mobile {
+  background-color: #5597c8;
+  color: var(--white) !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: none;
+  margin-right: 3.5% !important;
+  margin-left: 3.5% !important;
+}
+
+/*--------------------------------------------------------------
+Events & Tickets
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Events & Tickets - Banners - Upcoming Events
+--------------------------------------------------------------*/
+
+.upcoming-events-banner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#upcoming-events-banner h1,
+#home-lookback-banner h1,
+#keep-in-touch-banner h1,
+#rentals-conference-banner h1,
+#rentals-contactus-banner h1 {
+  font-size: 3.8rem;
+  letter-spacing: 0.15rem;
+}
+
+
+#custom-button button,
+#custom-button a,
+#custom-input-button {
+  background-color: var(--eventButtonsColor);
+  color: var(--white) !important;
+  border: 0;
+  height: auto;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 10px 0 !important;
+}
+
+#custom-input-button-hammerBlue {
+  background-color: var(--hammer-blue);
+  color: var(--white) !important;
+  padding: 0;
+  border: 0;
+  height: 40px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-top: 15px;
+}
+
+#custom-button a {
+  width: 80%;
+}
+
+#white-text-button-banner button {
+  background-color: var(--eventButtonsColor);
+  color: var(--white) !important;
+}
+
+#white-text-button-banner {
+  padding-top: 30px;
+}
+
+#series-sjsuathammer-banner {
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#series-musicwithoutborders-banner {
+  background-color: var(--musicWithoutBorders);
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#series-lightsandaction-banner {
+  background-color: var(--lightsAndAction);
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#series-arttech-banner {
+  background-color: var(--artTech);
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#series-hammerspeaks-banner {
+  background-color: var(--hammerSpeaks);
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#series-holidaysathammer-banner {
+  background-color: var(--holidaysAtHammer);
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#series-alsoathammer-banner {
+  background-color: var(--alsoAtHammer);
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#series-alsoathammer-banner * {
+  margin-bottom: 0;
+}
+
+/* ---------------------------------------
+      EVENT PAGE
+--------------------------------------- */
+
+.tribe-events-loop .tribe-events-event-meta {
+  font-size: 1.6rem !important;
+  font-weight: 400 !important;
+}
+
+.event-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5em !important;
+  padding-top: 0px !important;
+}
+
+.event-list-img-logo-container {
+  flex: 1.25 0.1;
+}
+
+.event-list-logo {
+  position: absolute;
+}
+
+#event-subcontainer2-with-logo {
+  margin-left: 6rem;
+  flex: 4 4;
+  vertical-align: text-bottom;
+}
+
+/* Event thumbnail */
+.tribe-events-list .tribe-events-loop .tribe-events-event-image {
+  flex: 1.25 0.1;
+  width: 100%;
+  min-width: 165px;
+}
+
+#event-subcontainer3 {
+  margin-left: 15px;
+  vertical-align: text-bottom;
+  flex: 1.5 1.5;
+}
+
+.learn-more-button {
+  width: 100%;
+  height: 4.5rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  text-align: center;
+  min-width: 100px;
+}
+
+.series-button {
+  width: 100%;
+  height: 4.5rem;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  text-align: center;
+  min-width: 100px;
+}
+
+.event-buy-ticket-button-container {
+  text-align: center;
+  background-color: var(--eventButtonsColor);
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 50px;
+}
+
+.buy-ticket-button-container {
+  background-color: var(--eventButtonsColor);
+  margin-left: 12.5%;
+  width: 150px !important;
+  height: 28px !important;
+  text-align: center;
+  border-radius: 50px;
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+}
+
+.single-featured-image-header img{
+  border: 1px solid grey;
+}
+
+/* Gets rid of shadow underline for anchor tags */
+.entry-content a,
+#tribe-events-content a,
+.vc_images_carousel .vc_carousel-control.vc_left,
+.vc_images_carousel .vc_carousel-control.vc_right {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  text-decoration: none !important;
+}
+
+a.series-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+#tribe-events-content.tribe-events-list {
+  margin-bottom: 0 !important;
+}
+
+#tribe-events-footer { display: none; }
+
+.tribe-event-url
+{ text-decoration:none !important; }
+
+.tribe-events-back { display: none; }
+
+.events-list.tribe-bar-is-disabled #tribe-events-content-wrapper {
+  max-width: none;
+  width: 100%;
+}
+
+.events-archive .entry-content {
+  width: 100%;
+}
+
+#tribe-events-content-wrapper {
+  padding-left: 6.5% !important;
+  padding-right: 6.5% !important;
+  margin-bottom: 0;
+}
+
+.tribe-events-list-separator-month:after {
+  border-bottom: none !important;
+}
+
+.tribe-events-list-separator-month {
+  text-align: left !important;
+  padding-left: 0 !important;
+}
+
+.tribe-events-list-separator-month span {
+  padding: 0 !important;
+}
+
+/* Event Content (Article and ticket info) */
+
+.event-content-two-col {
+  /* This is used to align the two elements horizontaly */
+  white-space: nowrap;
+}
+.event-content-two-col .left-col {
+  display: inline-block;
+  width: 65%;
+  white-space: normal;
+  vertical-align: text-top;
+  padding-right: 10em;
+}
+.event-content-two-col .right-col {
+  display: inline-block;
+  width: 35%;
+  white-space: normal;
+  vertical-align: text-top;
+  color: var(--white) !important;
+}
+.tribe-events-single-section-title {
+  color: var(--white) !important;
+}
+div.tribe-events-meta-group.tribe-events-meta-group-details {
+  width: 100%;
+  padding: 3em 1.5em;
+}
+
+div.tribe-events-single-section.tribe-events-event-meta.primary.tribe-clearfix {
+  /* Removing  the css for the parent of right col
+   * This div is generated by the events calender plug in
+   * and I did not want to modify it because this div is embedded in the php file
+   * that is generating the child div
+   */
+  border: 0px;
+  margin: 0;
+  background-color: inherit;
+}
+
+#event-subcontainer2 {
+  flex: 4 4;
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+
+/* Location Table */
+.divTable{
+  display: table;
+  width: 100%;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTableHeading {
+  background-color: #EEE;
+  display: table-header-group;
+}
+
+.divTableCell {
+  display: table-cell;
+  padding: 3px 10px 3px 0;
+}
+
+.divTableHeading {
+  background-color: #EEE;
+  display: table-header-group;
+  font-weight: bold;
+}
+.divTableFoot {
+  background-color: #EEE;
+  display: table-footer-group;
+  font-weight: bold;
+}
+.divTableBody {
+  display: table-row-group;
+}
+
+/* contact_map short code/Location map */
+.location_map_container .location_map_info { width: 60%; }
+.location_map_container .location_map { width: 40%; }
+
+.location_map_info.inline-block.va-text-top p strong {
+  white-space: nowrap;
+}
+
+.location_map_info.inline-block.va-text-top p {
+  vertical-align: middle;
+}
+
+/* Delete background and border shows up by default */
+.tribe-events-event-meta {
+  background: none !important;
+  border: none !important;
+}
+
+.tribe-events-list .type-tribe_events,
+.tribe-events-list-separator-month {
+  margin-bottom: 0;
+}
+
+/* Individual Event Page */
+.tribe-events-single ul.tribe-related-events .tribe-related-events-title .tribe-event-url {
+  font-size: 1.6rem !important;
+  font-weight: 500 !important;
+}
+
+.tribe-events-single ul.tribe-related-events .tribe-related-events-title .tribe-event-date-start {
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+}
+
+.single-tribe_events .tribe-events-single-event-title {
+  font-size: 3.4rem !important;
+  font-weight: 500 !important;
+}
+
+.tribe-events-single ul.tribe-related-events li .event-is-recurring {
+  display: none;
+}
+
+.tribe-events-single ul.tribe-related-events li {
+  width: 45%;
+}
+
+.tribe-events-single-section-title {
+  font-weight: 400 !important;
+}
+
+.single-tribe_events .tribe-events-event-meta {
+  font-size: 1.6rem !important;
+  font-weight: 300 !important;
+}
+
+/* ---------------------------------------
+  Series Page
+--------------------------------------- */
+.ecs-event-list {
+  list-style: none;
+}
+
+
+
+/*--------------------------------------------------------------
+Rentals
+--------------------------------------------------------------*/
+
+#rentals-rates-banner {
+  background-color: var(--hammer-blue);
+  color: var(--white) !important;
+  height: 155px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#rentals-contactus-banner {
+  background-color: var(--hammer-blue);
+  color: var(--white) !important;
+  height: 195px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#gallery-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-1-1 { flex: 1 1; }
+.flex-2-2 { flex: 2 2; }
+
+.gallery0-img-container img,
+.gallery1-img-container img,
+.gallery2-img-container img,
+.gallery3-img-container img {
+  width: 100%;
+}
+
+.gallery1-img-container img,
+.gallery2-img-container img {
+  height: 100%;
+}
+
+.gallery1-img-container:nth-child(2),
+.gallery2-img-container:nth-child(2) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.gallery2-img-container:last-child,
+.gallery3-img-container:last-child {
+  margin-left: 20px;
+ }
+
+.wpcf7-submit { width: 25%; }
+
+/*--------------------------------------------------------------
+About
+--------------------------------------------------------------*/
+
+#about-textblock-1 h2 {
+  margin-top: 15px;
+  font-weight: 600 !important;
+}
+
+#series-brand {
+  list-style: none;
+  margin-left: 0;
+}
+
+#series-brand li {
+  margin-top: 15px;
+}
+
+#series-brand img {
+  vertical-align: middle;
+}
+
+/*--------------------------------------------------------------
+Contact
+--------------------------------------------------------------*/
+
+/*
+ * CSS for text/email/text area in contact form
+ * This CSS is activated when not selected or not hovered***
+ */
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 select,
+.wpcf7 textarea,
+.wpcf7 input[type="text"]::placeholder,
+.wpcf7 input[type="email"]::placeholder,
+.wpcf7 input[type="tel"]::placeholder,
+.wpcf7 textarea::placeholder {
+  background-color: var(--form-bg);
+  color: var(--form-placeholder-text);
+  border-width: 1px;
+  border-color: var(--form-bg);
+  resize: none;
+  border-radius: 0px;
+  width: 100%;
+}
+
+
+/*
+CSS for text/email/text area in contact form
+***This CSS is activated only when selected(focus) or hovered***
+For more detail read here:
+https://stackoverflow.com/questions/1677990/what-is-the-difference-between-focus-and-active
+*/
+
+.wpcf7 input[type="text"]:focus,
+.wpcf7 input[type="email"]:focus,
+.wpcf7 input[type="tel"]:focus,
+.wpcf7 select:focus,
+.wpcf7 textarea:focus,
+.wpcf7 input[type="text"]:focus::placeholder,
+.wpcf7 input[type="email"]:focus::placeholder,
+.wpcf7 input[type="tel"]:focus::placeholder,
+.wpcf7 textarea:focus::placeholder {
+  color: var(--hammer-blue);
+  border-width: 1px;
+  border-color: var(--hammer-blue);
+}
+
+
+/*
+CSS for submit button in contact form
+*/
+
+.wpcf7 input[type="submit"] {
+  padding: 20px 80px 20px 80px;
+  background-color: var(--hammer-blue);
+  color: var(--white) !important;
+}
+
+
+/*
+
+CSS for the right side of contact form
+
+*/
+
+.contact-info {
+  background-color: var(--hammer-blue);
+  color: var(--white) !important;
+  font-size: 1.6rem;
+  padding: 20px;
+  height: auto;
+  margin-left: 20px;
+}
+
+.contact-info ul {
+  list-style-position: inside;
+}
+
+#contact-socialmedia {
+  margin-left: 0 !important;
+  list-style-type: none;
+}
+
+#contact-socialmedia img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/*--------------------------------------------------------------
+Media Queries
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+Miscellaneous
+--------------------------------------------------------------*/
+
+
+
+
+
+
+/* ---------------------------------------
+  WP Mobile Menu
+--------------------------------------- */
+
+.mob-menu-header-holder {
+  background-color: var(--hammer-blue) !important;
+}
+
+#mob-sjsu-logo {
+  margin-top: 7px;
+}
+.right-menu-icon-text {
+  color: white !important;
+  font-size: 1.7rem !important;
+  margin-top: 3px;
+}
+
+/* ---------------------------------------
+  Media Queries
+--------------------------------------- */
+body {
+  background-color: #d3d3d3;
+  min-width: 320px;
+}
+#page {
+  max-width: 1500px;
+  padding-left: auto;
+  padding-right: auto;
+  margin: auto;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1199px) {
+  html {font-size: 60%;}
+}
+
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  html {font-size: 57%;}
+
+  /* Site branding & navigation */
+  #sjsu-logo {display: none;}
+  #sjsu-copy {padding-left: 0;}
+  div.site-title h1 {font-size: 1.5rem;}
+  #top-menu #menu-item-114 {padding-right: 10px;}
+  #top-menu #menu-item-565 {flex: 0.3 0.3;}
+  #top-menu li a {font-size: 1.6rem;}
+  #top-menu #menu-item-379 {flex: 1 1;}
+
+  /* Contact page */
+  .contact-info {
+    font-size: 1.6rem;
+    padding: 10px;
+  }
+
+}
+
+/** Mobile/Tablet Design **/
+@media all and (max-width: 768px) {
+html {font-size: 52%;}
+.margin-top-20 {margin-top: 1rem !important;}
+.margin-left-20 {margin-left: 1rem !important;}
+.margin-right-20 {margin-right: 1rem !important;}
+.margin-bottom-20 {margin-bottom: 1rem !important;}
+
+.margin-top-30 {margin-top: 1.5rem !important;}
+.margin-left-30 {margin-left: 1.5rem !important;}
+.margin-right-30 {margin-right: 1.5rem !important;}
+.margin-bottom-30 {margin-bottom: 1.5rem !important;}
+
+.margin-top-50 {margin-top: 2.5rem !important;}
+.margin-left-50 {margin-left: 2.5rem !important;}
+.margin-right-50 {margin-right: 2.5rem !important;}
+.margin-bottom-50 {margin-bottom: 2.5rem !important;}
+
+.margin-top-60 {margin-top: 3rem !important;}
+.margin-left-60 {margin-left: 3rem !important;}
+.margin-right-60 {margin-right: 3rem !important;}
+.margin-bottom-60 {margin-bottom: 3rem !important;}
+
+.margin-top-80 {margin-top: 4rem !important;}
+.margin-left-80 {margin-left: 4rem !important;}
+.margin-right-80 {margin-right: 4rem !important;}
+.margin-bottom-80 {margin-bottom: 4rem !important;}
+
+p, li {
+  line-height: 25px;
+}
+/* Home - Featured Post */
+#featured-post-1 a,
+#featured-post-2 a,
+#featured-post-3 a { width: 100%;}
+
+
+
+#mob-hammer-logo-row {display: block !important;}
+  #custom-button button, #custom-button a, #custom-input-button {
+    height: auto;
+    font-size: 1.3rem !important;
+    padding: 10px 0;
+  }
+  .paddingLeft {padding-left: 3.5% !important;}
+  .paddingRight {padding-right: 3.5% !important;}
+  #mob-sjsu-logo {padding-left: 3.5%;}
+
+  #tribe-events-content-wrapper {padding-left: 3.5% !important; padding-right: 3.5% !important;}
+
+  /* Home page */
+  .site-branding {display: none !important;}
+  .menu-item a {float: none;}
+  .mob-expand-submenu {margin-top: -5px !important;}
+
+  #site-navigation button.menu-toggle {width: 0.01rem;}
+
+  /* Image Carousel */
+  .vc_images_carousel .vc_carousel-control {width: 55px !important; height: 25px !important;}
+
+  #featured-container,
+  #home-more-container,
+  .home-event-container {
+    flex-direction: column;
+  }
+
+  #home-event-leftCol-2,
+  #home-event-leftCol-4 {order: 2}
+
+  #home-event-rightCol-2,
+  #home-event-leftCol-4 {order: 1}
+
+  #featured-container .flex-1-1,
+  #home-more-container .flex-1-1 {margin-left:0 !important; margin-right:0 !important;}
+
+  #home-more-container .flex-1-1:nth-child(2),
+  #home-more-container .flex-1-1:nth-child(3) {margin-top: 2.5rem !important;}
+  #home-more-container .flex-1-1:nth-child(3) {margin-bottom: 2.5rem !important;}
+
+  #keep-in-touch-banner h1 {display:none;}
+  #keep-in-touch-banner #custom-button a {width: 80%; float: right;}
+
+  #home-event-img-2, #home-event-img-4 {margin-left: 0 !important;}
+
+  #home-event-img-1 .wp-post-image,
+  #home-event-img-2 .wp-post-image,
+  #home-event-img-3 .wp-post-image,
+  #home-event-img-4 .wp-post-image {width: 100%;}
+
+  .home-event-button {padding: 0.4em !important;}
+
+  #featured-col-2, #featured-col-3 {padding-top: 2.5rem;}
+
+  #home-quote-picture div {padding-left: 0 !important; padding-right: 0 !important;}
+  .home-event-button {width: 35% !important;}
+  .buy-ticket-button-container {margin-left: 0;}
+  /* END HOME PAGE */
+
+  /* Location Map */
+  .location_map iframe {
+    float: left !important;
+    margin-top: 20px;
+  }
+
+  /* Event Page */
+
+  .event-container {flex-direction: column;}
+
+  .tribe-events-event-image a {width: 100%;}
+
+  .tribe-events-event-image .wp-post-image {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .tribe-events-list .tribe-events-event-image {margin-right: 0 !important; width: 100%;}
+
+  #event-subcontainer2-with-logo,
+  #event-subcontainer3 {margin-left: 0px !important;}
+  .series-button {width: 35% !important;}
+  .learn-more-button {width: 35% !important;}
+  .event-buy-ticket-button-container {width: 150px; margin-left: 0;}
+  .banner-img, .banner-img2 img {padding-left: 0; padding-right: 0; margin-bottom: 2.5rem;}
+
+  /* END EVENT PAGE */
+
+
+
+  /* Site info */
+  .site-info {
+    margin-bottom: 0.25em;
+  }
+
+  .site-info p {
+    padding-left: 3.5%;
+  }
+
+  .widget-column section {
+    padding-bottom: 0 !important;
+  }
+
+  div.widget-column.widget-title {
+    padding-bottom: 0 !important;
+  }
+
+
+  #page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Footer */
+
+  #media_image-2 {width: 60%;}
+  #media_image-3 {width: 40%;}
+
+  footer .wrap {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  footer .widget-title,
+  footer .textwidget {
+    display: inline-block;
+  }
+
+  footer .textwidget {
+    vertical-align: text-top;
+    margin-top: -5px;
+  }
+
+  #text-10 .textwidget {margin-left: 50px;}
+  #text-14 {margin-top: 20px;}
+  #text-14 .textwidget {margin-left: 93px;}
+  #text-13 .textwidget {margin-left: 98px;}
+  #custom_html-3 {margin-left: 175px; margin-top: 15px;}
+  #text-15 .textwidget {margin-left: 140px;}
+
+  footer .widget-column {
+    margin-top: 20px;
+  }
+
+  .widget-area {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3.5% !important;
+    padding-right: 3.5% !important;
+  }
+
+  div.widget-column.footer-widget-1 {
+    padding: 0 !important;
+    width: 60% !important;
+  }
+
+  div.widget-column.footer-widget-2,
+  div.widget-column.footer-widget-3,
+  div.widget-column.footer-widget-4 {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  #text-15 {
+    float: left;
+  }
+
+  /* End footer */
+
+  #home-event-img-1,
+  #home-event-img-2,
+  #home-event-img-3,
+  #home-event-img-4 {
+    width: 100%;
+  }
+
+  /* for even number id, re-order elements so order is picture and text */
+  #home-event-img-2,
+  #home-event-img-4 {
+    order: 1;
+  }
+  #home-event-subcontainer-2,
+  #home-event-subcontainer-4 {
+    order: 2;
+  }
+
+  /* Single Event page */
+
+  h3.tribe-events-related-events-title,
+  .tribe-related-events {
+    display: none;
+  }
+
+  /* Stacking general admission */
+  .event-content-two-col .right-col {
+    float: left;
+    width: 100%;
+  }
+
+  .event-content-two-col .left-col {
+    width: 100%;
+  }
+
+  /* Location map shortcode */
+  .location_map_container {
+    flex-direction: column;
+  }
+  .location_map_container .location_map_info,
+  .location_map_container .location_map {
+    width: 100%;
+  }
+
+  #home-lookback-banner-mobile .look-back{
+    width: 50%;
+  }
+
+  #home-lookback-banner-mobile {
+    display: unset;
+  }
+  /*
+
+  #home-lookback-banner {
+    display: none;
+  }
+  */
+  #home-lookback-banner {
+    display: none;
+  }
+  #home-lookback-banner-mobile {
+    background-color: #5597c8;
+    color: var(--white) !important;
+    align-items: center;
+    display: block;
+    margin-right: 3.5% !important;
+    margin-left: 3.5% !important;
+  }
+
+  #home-event-logo,
+  .event-list-logo {
+      display: none;
+  }
+  .order-1-in-mobile {
+    order: 1;
+  }
+  .order-2-in-mobile {
+    order: 2;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 767px) {
+html {font-size: 51%;}
+  /* Contact Page */
+  .contact-info {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+
+@media all and (max-width: 479px) {
+html {font-size: 50%;}
+ /* Contact Page */
+ .contact-info {
+   margin-left: 0;
+   margin-top: 20px;
+ }
+
+  #home-event-subcontainer-1,
+  #home-event-subcontainer-2,
+  #home-event-subcontainer-3,
+  #home-event-subcontainer-4 {
+    width: auto;
+  }
+  #home-event-img-2,
+  #home-event-img-4 {
+    margin: auto;
+  }
+
+  #keep-in-touch-banner {
+    height: auto;
+  }
+
+  #mobile-sjsu-copy {
+    display: none;
+  }
+  #mob-hammer-logo-row img {
+    width: 80px;
+  }
+  #mob-hammer-logo-row span {
+    font-size: 1rem !important;
+  }
+  #gallery-container {
+    flex-direction: column;
+  }
+}
+
+/* Override froms twentyseventeen style.css */
+@media screen and (min-width: 48em) {
+  .wrap {
+    max-width:1920px;
+    min-width: 320px;
+  }
+
+  .main-navigation a {
+    padding: 0;
+  }
+  .navigation-top .wrap {
+    max-width: 1920px;
+    min-width: 320px;
+  }
+
+  .navigation-top {
+    position: static;
+  }
+
+}

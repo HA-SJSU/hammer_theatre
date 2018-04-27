@@ -78,11 +78,11 @@ if($is_current_page_events){
 </h2>
 <?php do_action( 'tribe_events_after_the_event_title' ) ?>
 
-<!-- subtitle -->
-<h4 class="subtitle">
-<?php echo get_post_meta($event_id, 'subtitle', true); ?>
-</h4>
-<!-- End of subtitle -->
+<!-- Subtitle -->
+<h3 class="subtitle">
+<?php echo get_post_meta($event_id, 'Subtitle', true); ?>
+</h3>
+<!-- End of Subtitle -->
 
 <!-- Event Content -->
 <?php do_action( 'tribe_events_before_the_content' ); ?>
@@ -114,26 +114,23 @@ if($is_current_page_events){
                                                 echo tribe_events_event_schedule_details();
                                         }
                                 }
+                                show_event_dates($event_id)
 			?>
+
 		</div>
 	</div>
 </div><!-- .tribe-events-event-meta -->
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
 
 <!-- Series button -->
-<div class="flex-hor-ver-venter-container series-button" style="background-color: var(<?php echo $category_color ?>);">
-<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more white-text" rel="bookmark" ><?php esc_html_e( 'Learn more', 'the-events-calendar' ) ?></a>
-</div>
-
 <a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="button learn-more-button" rel="bookmark" style="background-color: var(<?php echo $category_color ?>);"><?php esc_html_e( 'Learn more', 'the-events-calendar' ) ?></a>
 
 <!-- Render ticket link in single event page -->
 <?php
       $ticket_url = get_post_meta($event_id, 'Ticket_Link', true);
       if ($ticket_url) { ?>
-            <div class="event-buy-ticket-button-container"><a href="<?php echo $ticket_url; ?>" class="buy-ticket-button">BUY TICKETS</a></div>
-      <?php
-                } else {
+            <a href="<?php echo $ticket_url; ?>" class="button event-buy-ticket-button-container buy-ticket-button">BUY TICKETS</a>
+      <?php } else {
                 // do nothing;
                 }
                 ?>

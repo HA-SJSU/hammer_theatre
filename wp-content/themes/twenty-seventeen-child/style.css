@@ -1,11 +1,10 @@
 /*
 Theme Name: Twenty-Seventeen-Child
 Theme URI: https://wordpress.org/themes/twentyseventeen/
-Author: David Vu, Yuki Kuroshima & Yuki2
+Author: David Vu and Yuki Kuroshima
 Template: twentyseventeen
 Description: Main stlye sheet for HammerTheatre.com
-Version: 1.2.1
-
+Version: 1.2.3
 */
 
 
@@ -287,6 +286,15 @@ h4 {
 ul {
   margin-left: 1.8rem;
   margin-bottom: 0;
+}
+
+/* Loading Icon */
+#load{
+  width:100%;
+  height:100%;
+  position:fixed;
+  z-index:9999;
+  background:url("https://loading.io/spinners/coolors/lg.palette-rotating-ring-loader.gif") no-repeat center center white;
 }
 
 /*--------------------------------------------------------------
@@ -613,6 +621,14 @@ Global - Banners
 .past-events-banner {
   margin-left: -7.5%;
   margin-right: -7.5%;
+}
+
+/* ---------------------------------------
+Global - Events
+--------------------------------------- */
+.event-date-container {
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
 
